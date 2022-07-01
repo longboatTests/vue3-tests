@@ -9,7 +9,7 @@ import { PropType } from 'vue';
 
 const props = defineProps({
   /**
-   * The variantt of the button - either 'primary' or 'secondary'
+   * The variant of the button - either 'primary' or 'secondary'
    * @example 'secondary'
    */
   variant: {
