@@ -21,7 +21,9 @@
     [
      "button",
      "icon",
-     "uibutton"
+     "uibutton",
+     "copyrightlabel",
+     "test"
     ]
    ],
    [

@@ -75,3 +75,13 @@ export const secondary_disabled = () => ({
   components: { Button },
   template: `<Button class='btn btn--secondary' disabled>Secondary</Button>`,
 });
+
+export const tertiary = () => ({
+  components: { Button },
+  template: `<Button class='btn btn--tertiary'>Tertiary</Button>`,
+});
+
+export const tertiary_disabled = () => ({
+  components: { Button },
+  template: `<Button class='btn btn--tertiary' disabled>Tertiary</Button>`,
+});
