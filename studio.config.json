@@ -22,7 +22,9 @@
      "button",
      "icon",
      "uibutton",
-     "copyrightlabel"
+     "copyrightlabel",
+     "components/button",
+     "components/uibutton"
     ]
    ],
    [
