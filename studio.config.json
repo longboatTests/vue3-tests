@@ -23,12 +23,6 @@
                 ]
             ],
             [
-                "components-two", [
-                    "components/button",
-                    "components/copyrightlabel"
-                ]
-            ],
-            [
                 "infrastructure", [
                     "doc-layout",
                     "types"
