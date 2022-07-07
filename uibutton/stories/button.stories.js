@@ -1,19 +1,5 @@
 import Button from '~/uibutton/src/Button.vue';
 
-/*
-const Template = (args, { argTypes }) => ({
-  components: { Button },
-  props: Object.keys(argTypes),
-  template: '<Button v-bind="$props">Test</Button>',
-});
-
-export const Test = Template.bind({});
-Test.args = {};
-
-export const TestDisabled = Template.bind({});
-TestDisabled.args = { disabled: true };
-*/
-
 export const text = () => ({
   components: { Button },
   template: `<Button>Text</Button>`,

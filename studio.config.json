@@ -1,36 +1,41 @@
 {
-    "packages": {
-        "dir": "",
-        "menu": [
-            "introduction", [
-                "tokens", [
-                    "typography",
-                    "colors",
-                    "spacing",
-                    "elevation",
-                    "border-radius",
-                    "transition",
-                    "z-index",
-                    "theme"
-                ]
-            ],
-            [
-                "components", [
-                    "button",
-                    "icon",
-                    "uibutton",
-                    "copyrightlabel"
-                ]
-            ],
-            [
-                "infrastructure", [
-                    "doc-layout",
-                    "types"
-                ]
-            ]
-        ]
-    },
-    "doc": {
-        "markdownEngine": "vue"
-    }
+ "packages": {
+  "dir": "",
+  "menu": [
+   "introduction",
+   [
+    "tokens",
+    [
+     "typography",
+     "colors",
+     "spacing",
+     "elevation",
+     "border-radius",
+     "transition",
+     "z-index",
+     "theme"
+    ]
+   ],
+   [
+    "components",
+    [
+     "button",
+     "icon",
+     "uibutton",
+     "copyrightlabel",
+     "uilistbox"
+    ]
+   ],
+   [
+    "infrastructure",
+    [
+     "doc-layout",
+     "types"
+    ]
+   ]
+  ]
+ },
+ "doc": {
+  "markdownEngine": "vue"
+ }
 }

@@ -1,0 +1,82 @@
+<template>
+  <select class="ui-select" @change="emitOptionChangeEvent($event)">
+    <option
+      :selected="isSelected(option.value, selectedOption)"
+      :value="option.value"
+      v-for="option in options"
+      :key="option.value"
+    >
+      {{ option.text }}
+    </option>
+    <!-- @slot Use this slot to manually add the <option> tag -->
+    <slot />
+  </select>
+</template>
+
+<script>
+/**
+ * The list/select box.
+ * @displayName ListBox
+ */
+export default {
+  props: {
+    /**
+     * Specifies the list of options to be displayed in the list/selection box
+     */
+    options: {
+      type: Array,
+      required: false,
+    },
+
+    /**
+     * Specifies which one of the options in the list is in view or selected
+     */
+    selectedOption: {
+      type: String,
+      default: 'en',
+      required: false,
+    },
+  },
+  methods: {
+    isSelected(localeValue, selectedOption) {
+      return localeValue === selectedOption;
+    },
+    emitOptionChangeEvent(event) {
+      this.$emit('optionChange', event.target.value);
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+$select-border-color: #dedede !default;
+$select-border-radius: 5px !default;
+$select-bg-color: white;
+$select-text-color: black;
+$select-padding: 0.7em 3.5em 0.7em 1em;
+$select-caret-color: black;
+
+.ui-select {
+  border: 1px solid $select-border-color;
+  border-radius: $select-border-radius;
+  background: $select-bg-color;
+  color: $select-text-color;
+  padding: $select-padding;
+  appearance: none;
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      $select-caret-color 50%
+    ),
+    linear-gradient(135deg, $select-caret-color 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+
+  /* IE11 hide hacks*/
+  &::-ms-expand {
+    display: none;
+  }
+}
+</style>
