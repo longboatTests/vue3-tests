@@ -9,7 +9,10 @@
         "serve": "npx backlight@latest serve 5UR3up9q7jLO64Bigppg --open"
     },
     "exports": {
-        ".": "./index.js"
+        ".": "./index.js",
+        "./button": "./uibutton/src/Button.vue",
+        "./uilistbox": "./uilistbox/src/UiListBox.vue",
+        "./copyrightlabel": "./copyrightlabel/src/CopyrightLabel.vue"
     },
     "types": "index.d.ts",
     "dependencies": {
