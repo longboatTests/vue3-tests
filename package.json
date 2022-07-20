@@ -14,8 +14,8 @@
         "./uilistbox": "./uilistbox/src/index.js",
         "./copyrightlabel": "./copyrightlabel/src/index.js"
     },
-    "browser":{
-      "./sfc": "./uibutton/src/Button.vue"
+    "browser": {
+        "./sfc": "./sfc.js"
     },
     "types": "index.d.ts",
     "dependencies": {
