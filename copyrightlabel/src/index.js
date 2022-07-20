@@ -1,1 +1,1 @@
-export { default as CopyrightLabel } from "./src/CopyrightLabel.vue";
+export { default as CopyrightLabel } from "CopyrightLabel.vue";
