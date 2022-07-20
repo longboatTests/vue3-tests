@@ -10,7 +10,6 @@
     },
     "exports": {
         ".": "./index.js",
-        "./sfc": "./sfc.vue",
         "./button": "./uibutton/src/index.js",
         "./uilistbox": "./uilistbox/src/index.js",
         "./copyrightlabel": "./copyrightlabel/src/index.js"
