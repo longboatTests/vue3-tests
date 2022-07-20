@@ -1,1 +1,1 @@
-export { default as UiListBox } from "./UiListBox";
+export { default as UiListBox } from "./UiListBox.vue";
