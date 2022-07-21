@@ -3,7 +3,6 @@
     "target": "ESNext",
     "outDir": "lib",
     "allowJs": true,
-    "checkJs": false,
     "experimentalDecorators": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -15,6 +14,5 @@
         "*"
       ]
     }
-  },
-  "exclude": ["src/*.vue.js", "./*.vue.js" ]
+  }
 }
