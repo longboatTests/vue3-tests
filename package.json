@@ -9,7 +9,9 @@
         "serve": "npx backlight@latest serve 5UR3up9q7jLO64Bigppg --open"
     },
     "exports": {
-        ".": "./index.js",
+        ".": "./index.js"
+    },
+    "browser": {
         "./sfc": "./sfc.vue.mjs"
     },
     "types": "index.d.ts",
