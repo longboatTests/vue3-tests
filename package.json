@@ -12,9 +12,6 @@
         ".": "./index.js",
         "./sfc": "./sfc.vue.mjs"
     },
-    "browser": {
-        "./sfc": "./sfc.vue.mjs"
-    },
     "types": "index.d.ts",
     "dependencies": {
         "vue": "^3.2.25"
