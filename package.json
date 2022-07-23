@@ -1,6 +1,6 @@
 {
     "name": "@lbuimaster/vue-test",
-    "version": "0.2.26",
+    "version": "0.2.25",
     "description": "",
     "license": "MIT",
     "type": "module",
@@ -9,7 +9,8 @@
         "serve": "npx backlight@latest serve 5UR3up9q7jLO64Bigppg --open"
     },
     "exports": {
-        ".": "./index.js"
+        ".": "./index.js",
+        "./sfc": "./sfc.vue.mjs"
     },
     "browser": {
         "./sfc": "./sfc.vue.mjs"
