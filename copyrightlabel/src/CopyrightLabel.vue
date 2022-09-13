@@ -1,15 +1,10 @@
 <template>
-  <div class="copyright-label">
-    <p class="copyright-label__text">
-      Copyright © {{ new Date().getFullYear() }} Advarra, Inc. |
-      <a
-        class="copyright-label__link"
-        target="_blank"
-        :href="'https://app.longboat.com/gateway/privacy?locale=' + locale"
-        ><slot
-      /></a>
-    </p>
-  </div>
+  <span class="ux-copyright-label__text">
+    {{ copyrightText }}
+    <a class="ux-copyright-label__link" target="_blank" :href="siteURL"
+      ><slot
+    /></a>
+  </span>
 </template>
 
 <script>
@@ -24,12 +19,20 @@ export default {
       default: 'en',
     },
   },
+  computed: {
+    siteURL() {
+      return 'https://app.longboat.com/gateway/privacy?locale=' + this.locale;
+    },
+    copyrightText() {
+      return 'Copyright © ' + new Date().getFullYear() + ' Advarra, Inc. |';
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-$copyright-text-color: black;
-$copyright-link-text-color: (
+$ux-copyright-text-color: black !default;
+$ux-copyright-link-text-color: (
   default: black,
   onhover: black,
   onfocus: darken(black, 10%),
@@ -37,33 +40,33 @@ $copyright-link-text-color: (
   visited: darken(black, 10%),
 ) !default;
 
-.copyright-label {
+.ux-copyright-label {
   &__text {
-    color: $copyright-text-color;
-    font-size: 1rem;
+    color: $ux-copyright-text-color;
+    //font-size: 1rem;
     margin: 0;
     padding: 0;
   }
 
   &__link {
-    color: map-get($copyright-link-text-color, default);
+    color: map-get($ux-copyright-link-text-color, default);
     text-decoration: none;
 
     &:hover {
-      color: map-get($copyright-link-text-color, onhover);
+      color: map-get($ux-copyright-link-text-color, onhover);
       text-decoration: underline;
     }
 
     &:focus {
-      color: map-get($copyright-link-text-color, onfocus);
+      color: map-get($ux-copyright-link-text-color, onfocus);
     }
 
     &:active {
-      color: map-get($copyright-link-text-color, onactive);
+      color: map-get($ux-copyright-link-text-color, onactive);
     }
 
     &:visited {
-      color: map-get($copyright-link-text-color, visited);
+      color: map-get($ux-copyright-link-text-color, visited);
       text-decoration: none;
     }
   }

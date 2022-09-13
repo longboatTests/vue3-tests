@@ -17,13 +17,20 @@
     ]
    ],
    [
+    "modules",
+    [
+     "i18n",
+     "common"
+    ]
+   ],
+   [
     "components",
     [
-     "button",
      "icon",
      "uibutton",
      "copyrightlabel",
-     "uilistbox"
+     "uiselect",
+     "wistiavideo"
     ]
    ],
    [

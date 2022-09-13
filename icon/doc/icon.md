@@ -1,5 +1,5 @@
 <script setup>
-import { Icon } from '../../index';
+import Icon from '~/icon/src/Icon.vue';
 
 const iconPlaygroundCode = '<Icon icon="logos:vue"></Icon>';
 const handleError = (e) => console.error(e);

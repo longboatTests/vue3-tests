@@ -1,7 +1,7 @@
 <script setup>
 import Button from '~/uibutton/src/Button.vue';
 
-const buttonPlaygroundCode = '<Button  class="btn btn--primary">Click me</Button>';
+const buttonPlaygroundCode = '<Button  class="ux-btn ux-btn--primary">Click me</Button>';
 </script>
 
 # Button component
