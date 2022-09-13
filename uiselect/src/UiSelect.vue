@@ -1,5 +1,6 @@
 <template>
-  <select class="ui-select" @change="emitOptionChangeEvent($event)">
+  <select class="ux-select" @change="emitOptionChangeEvent($event)">
+    <slot name="before" />
     <option
       :selected="isSelected(option.value, selectedOption)"
       :value="option.value"
@@ -16,7 +17,7 @@
 <script>
 /**
  * The list/select box.
- * @displayName ListBox
+ * @displayName Select box
  */
 export default {
   props: {
@@ -49,26 +50,26 @@ export default {
 </script>
 
 <style lang="scss">
-$select-border-color: #dedede !default;
-$select-border-radius: 5px !default;
-$select-bg-color: white;
-$select-text-color: black;
-$select-padding: 0.7em 3.5em 0.7em 1em;
-$select-caret-color: black;
+$ux-select-border-color: #dedede !default;
+$ux-select-border-radius: 5px !default;
+$ux-select-bg-color: white !default;
+$ux-select-text-color: black !default;
+$ux-select-padding: 0.7em 3.5em 0.7em 1em !default;
+$ux-select-caret-color: black !default;
 
-.ui-select {
-  border: 1px solid $select-border-color;
-  border-radius: $select-border-radius;
-  background: $select-bg-color;
-  color: $select-text-color;
-  padding: $select-padding;
+.ux-select {
+  border: 1px solid $ux-select-border-color;
+  border-radius: $ux-select-border-radius;
+  background: $ux-select-bg-color;
+  color: $ux-select-text-color;
+  padding: $ux-select-padding;
   appearance: none;
   background-image: linear-gradient(
       45deg,
       transparent 50%,
-      $select-caret-color 50%
+      $ux-select-caret-color 50%
     ),
-    linear-gradient(135deg, $select-caret-color 50%, transparent 50%);
+    linear-gradient(135deg, $ux-select-caret-color 50%, transparent 50%);
   background-position: calc(100% - 20px) calc(1em + 2px),
     calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;

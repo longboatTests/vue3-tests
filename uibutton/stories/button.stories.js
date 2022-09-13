@@ -12,7 +12,7 @@ export const text_disabled = () => ({
 
 export const outline = () => ({
   components: { Button },
-  template: `<Button class='btn btn--outline'>Outline</Button>`,
+  template: `<Button class='ux-btn ux-btn--outline'>Outline</Button>`,
 });
 
 /*
@@ -39,35 +39,45 @@ export const outline_xLarge = () => ({
 
 export const outline_disabled = () => ({
   components: { Button },
-  template: `<Button class='btn btn--outline' disabled>Outline</Button>`,
+  template: `<Button class='ux-btn ux-btn--outline' disabled>Outline</Button>`,
 });
 
 export const primary = () => ({
   components: { Button },
-  template: `<Button class='btn btn--primary'>Primary</Button>`,
+  template: `<Button class='ux-btn ux-btn--primary'>Primary</Button>`,
 });
 
 export const primary_disabled = () => ({
   components: { Button },
-  template: `<Button class='btn btn--primary' disabled>Primary</Button>`,
+  template: `<Button class='ux-btn ux-btn--primary' disabled>Primary</Button>`,
+});
+
+export const primary_small = () => ({
+  components: { Button },
+  template: `<Button class='ux-btn ux-btn--primary ux-btn--small'>Primary</Button>`,
+});
+
+export const primary_large = () => ({
+  components: { Button },
+  template: `<Button class='ux-btn ux-btn--primary ux-btn--large'>Primary</Button>`,
 });
 
 export const secondary = () => ({
   components: { Button },
-  template: `<Button class='btn btn--secondary'>Secondary</Button>`,
+  template: `<Button class='ux-btn ux-btn--secondary'>Secondary</Button>`,
 });
 
 export const secondary_disabled = () => ({
   components: { Button },
-  template: `<Button class='btn btn--secondary' disabled>Secondary</Button>`,
+  template: `<Button class='ux-btn ux-btn--secondary' disabled>Secondary</Button>`,
 });
 
 export const tertiary = () => ({
   components: { Button },
-  template: `<Button class='btn btn--tertiary'>Tertiary</Button>`,
+  template: `<Button class='ux-btn ux-btn--tertiary'>Tertiary</Button>`,
 });
 
 export const tertiary_disabled = () => ({
   components: { Button },
-  template: `<Button class='btn btn--tertiary' disabled>Tertiary</Button>`,
+  template: `<Button class='ux-btn ux-btn--tertiary' disabled>Tertiary</Button>`,
 });
