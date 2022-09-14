@@ -1,2 +1,2 @@
-export { default as utils } from './utils.js';
-export { default as localelist } from './localelist.js';
+export { default as utils } from '~/i18n/src/utils.js';
+export { default as localelist } from '~/i18n/src/localelist.js';
