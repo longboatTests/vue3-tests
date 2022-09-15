@@ -15,6 +15,9 @@ export function isLocaleSupported(supportedLocales, locale) {
   return supportedLocales.includes(locale);
 }
 
+//this function returns an array after comparing both locales & localeGroup
+//eg assume locales = ["en", "es"] and localeGroup = {en: 'English', af: 'Afrikaans'}
+//the result returned will be [{code: 'en', name: 'English'}]
 export function getSupportedLocales(locales, localeGroup) {
   let localeGroupNew = {};
   locales.forEach((element) => {
