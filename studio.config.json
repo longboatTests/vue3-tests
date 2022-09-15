@@ -1,48 +1,48 @@
 {
- "packages": {
-  "dir": "",
-  "menu": [
-   "introduction",
-   [
-    "tokens",
-    [
-     "typography",
-     "colors",
-     "spacing",
-     "elevation",
-     "border-radius",
-     "transition",
-     "z-index",
-     "theme"
+  "packages": {
+    "dir": "",
+    "menu": [
+      "introduction",
+      [
+        "tokens",
+        [
+          "typography",
+          "colors",
+          "spacing",
+          "elevation",
+          "border-radius",
+          "transition",
+          "z-index",
+          "theme"
+        ]
+      ],
+      [
+        "modules",
+        [
+          "i18n",
+          "common"
+        ]
+      ],
+      [
+        "components",
+        [
+          "icon",
+          "uibutton",
+          "copyrightlabel",
+          "uiselect",
+          "wistiavideo"
+        ]
+      ],
+      [
+        "infrastructure",
+        [
+          "doc-layout",
+          "types"
+        ]
+      ]
     ]
-   ],
-   [
-    "modules",
-    [
-     "i18n",
-     "common"
-    ]
-   ],
-   [
-    "components",
-    [
-     "icon",
-     "uibutton",
-     "copyrightlabel",
-     "uiselect",
-     "wistiavideo"
-    ]
-   ],
-   [
-    "infrastructure",
-    [
-     "doc-layout",
-     "types"
-    ]
-   ]
-  ]
- },
- "doc": {
-  "markdownEngine": "vue"
- }
+  },
+  "doc": {
+    "markdownEngine": "vue"
+  }
 }
