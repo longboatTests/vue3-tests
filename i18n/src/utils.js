@@ -1,4 +1,4 @@
-import '~/i18n/src/locale-list.js';
+import './locale-list.js';
 
 export function isLocaleInLocalesFolder(localesInLocalesFolder, _locale) {
   return localesInLocalesFolder.includes(_locale);
