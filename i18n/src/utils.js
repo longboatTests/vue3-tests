@@ -1,4 +1,6 @@
-import './locale-list.js';
+import localeList from './locale-list.js';
+
+export const localelist = localeList;
 
 export function isLocaleInLocalesFolder(localesInLocalesFolder, _locale) {
   return localesInLocalesFolder.includes(_locale);
