@@ -1,4 +1,4 @@
-const localeList = {
+export const localeList = {
   af: 'Afrikaans', // Afrikaans
   ar: 'العربية', // Arabic
   bd: 'Belgisch-Nederlands', // Belgian Dutch
@@ -52,5 +52,3 @@ const localeList = {
   zh: '简体中文', // Simplified Chinese
   zu: 'Zulu', // Zulu
 };
-
-export const locales = () => localeList;
