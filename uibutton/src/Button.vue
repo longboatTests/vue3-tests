@@ -1,5 +1,7 @@
 <template>
-  <button class="ux-btn" :disabled="isDisabled"><slot /></button>
+  <button class="ux-btn" :disabled="isDisabled" @click="$emit('click')">
+    <slot />
+  </button>
 </template>
 
 <script>
