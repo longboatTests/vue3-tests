@@ -16,12 +16,15 @@ Wistia Video component
 
 ```html
 <WistiaVideo :videoID="swtft1u3p5">
-    <template #icon>
-        <Icon icon="fa-solid:play-circle" iconSize="50px" />
-    </template>
-    <template #info>
-        <h3> Video title </h4>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-    </template>
+  <template #icon>
+    <Icon icon="fa-solid:play-circle" iconSize="50px" />
+  </template>
+  <template #info>
+    <h3>Video title</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </template>
 </WistiaVideo>
 ```
