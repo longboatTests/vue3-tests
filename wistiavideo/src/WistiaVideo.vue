@@ -80,8 +80,8 @@ export default {
 <style lang="scss">
 $video-icon-bgcolor: white !default;
 $video-icon-bgcolor-onhover: #bd4411 !default;
-$video-icon-color: white !default;
-$video-icon-color-onhover: #bd4411 !default;
+$video-icon-color: #bd4411 !default;
+$video-icon-color-onhover: white !default;
 $video-overlay-bgcolor-onhover: #bd4411 !default;
 $video-strip-color: #bd4411 !default;
 $video-strip-height: 16px !default;
@@ -108,7 +108,7 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
       }
 
       i {
-        background: $video-icon-color;
+        background: $video-icon-color-onhover;
       }
 
       .video__play-link-wrapper {
@@ -167,7 +167,7 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
   }
 
   i {
-    background: $video-icon-color-onhover;
+    background: $video-icon-color;
     transition: all 0.3s ease;
   }
 }
