@@ -36,8 +36,8 @@
 
 <script>
 import CookieLaw from 'vue-cookie-law';
-import UiButtonVue from '~/uibutton/src/Button.vue';
-import PrivacyPolicyLinkVue from '~/privacypolicylink/src/PrivacyPolicyLink.vue';
+import UiButtonVue from '../../uibutton/src/Button.vue';
+import PrivacyPolicyLinkVue from '../../privacypolicylink/src/PrivacyPolicyLink.vue';
 
 /**
  * Displays the Cookie Policy modal
