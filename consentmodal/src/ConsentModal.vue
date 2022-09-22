@@ -18,14 +18,14 @@
           </privacy-policy-link>
         </p>
         <ui-button
-          class="accept-btn ux-btn--small ux-btn--tertiary"
+          class="accept-btn btn--small btn--primary"
           @click="props.accept"
         >
           <!-- @slot Use this slot to add the accept button label -->
           <slot name="accept-btn-text"></slot>
         </ui-button>
         <br />
-        <ui-button class="reject-btn ux-btn--small" @click="props.close">
+        <ui-button class="reject-btn btn--text" @click="props.close">
           <!-- @slot Use this slot to add the reject button label -->
           <slot name="reject-btn-text"></slot>
         </ui-button>
@@ -44,6 +44,7 @@ import PrivacyPolicyLinkVue from '~/privacypolicylink/src/PrivacyPolicyLink.vue'
  * @displayName Cookie Modal
  */
 export default {
+  name: 'cookie-law-modal',
   components: {
     CookieLaw,
     'ui-button': UiButtonVue,
@@ -84,7 +85,33 @@ export default {
 </script>
 
 <style lang="scss">
-/* The Modal (background) */
+$consent-modal-bg-color: black !default;
+$consent-modal-text-color: white !default;
+$consent-modal-accept-btn-bg-color: (
+  default: #2f802f,
+  onhover: darken(#2f802f, 15%),
+  onfocus: darken(#2f802f, 10%),
+  onactive: darken(#2f802f, 10%),
+) !default;
+$consent-modal-accept-btn-text-color: (
+  default: white,
+  onhover: white,
+  onfocus: white,
+  onactive: white,
+) !default;
+$consent-modal-decline-btn-text-color: (
+  default: #0a97c2,
+  onhover: #0a97c2,
+  onfocus: #0a97c2,
+  onactive: #0a97c2,
+) !default;
+$consent-modal-privacy-policy-text-color: (
+  default: #0a97c2,
+  onhover: #0a97c2,
+  onfocus: #0a97c2,
+  onactive: #0a97c2,
+) !default;
+
 #ux-consent-modal {
   position: fixed;
   z-index: 999;
@@ -92,25 +119,45 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(75, 75, 75, 0.2);
 }
 
-.reject-btn {
-  color: #1caae7;
+.accept-btn {
+  padding: 4px 32px;
+  background: map-get($consent-modal-accept-btn-bg-color, default);
+  color: map-get($consent-modal-accept-btn-text-color, default);
 
   &:hover {
-    //color: #2f802f;
+    color: map-get($consent-modal-accept-btn-text-color, onhover);
+    background: map-get($consent-modal-accept-btn-bg-color, onhover);
+  }
+
+  /*margin-right: 20px;*/
+}
+
+.reject-btn {
+  color: map-get($consent-modal-decline-btn-text-color, default) !important;
+
+  &:hover {
     text-decoration: underline;
   }
 }
 
 .Cookie--base {
-  background: black;
-  color: white;
-  padding: 20px 16px 10px;
+  background: $consent-modal-bg-color !important;
+  color: $consent-modal-text-color !important;
+  padding: 20px 16px 10px !important;
+}
+
+.Cookie {
+  flex-direction: row !important;
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: column !important;
+  }
 }
 
 .Cookie > * {
@@ -126,7 +173,7 @@ export default {
 }
 
 .privacy-link {
-  color: #1caae7;
+  color: map-get($consent-modal-privacy-policy-text-color, default) !important;
   text-decoration: none;
 
   &:hover {
