@@ -13,7 +13,8 @@
     },
     "types": "index.d.ts",
     "dependencies": {
-        "vue": "^3.2.25"
+        "vue": "^3.2.25",
+        "vue-cookie-law": "^1.13.3"
     },
     "devDependencies": {
         "@divriots/dockit-core": "^0.9.1",

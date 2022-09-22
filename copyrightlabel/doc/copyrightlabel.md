@@ -1,7 +1,8 @@
 <script setup>
 import CopyrightLabel from '~/copyrightlabel/src/CopyrightLabel.vue';
+import PrivacyPolicyLink from '~/privacypolicylink/src/PrivacyPolicyLink.vue';
 
-const copyrightLabelPlaygroundCode = `<CopyrightLabel :locale="en" > Privacy policy</CopyrightLabel>`;
+const copyrightLabelPlaygroundCode = `<CopyrightLabel > <PrivacyPolicyLink locale='sp'>Privacy Policy</PrivacyPolicyLink></CopyrightLabel>`;
 
 </script>
 
