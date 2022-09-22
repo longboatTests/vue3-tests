@@ -1,48 +1,49 @@
 {
-  "packages": {
-    "dir": "",
-    "menu": [
-      "introduction",
-      [
-        "tokens",
-        [
-          "typography",
-          "colors",
-          "spacing",
-          "elevation",
-          "border-radius",
-          "transition",
-          "z-index",
-          "theme"
-        ]
-      ],
-      [
-        "modules",
-        [
-          "i18n",
-          "common"
-        ]
-      ],
-      [
-        "components",
-        [
-          "icon",
-          "uibutton",
-          "copyrightlabel",
-          "uiselect",
-          "wistiavideo"
-        ]
-      ],
-      [
-        "infrastructure",
-        [
-          "doc-layout",
-          "types"
-        ]
-      ]
+ "packages": {
+  "dir": "",
+  "menu": [
+   "introduction",
+   [
+    "tokens",
+    [
+     "typography",
+     "colors",
+     "spacing",
+     "elevation",
+     "border-radius",
+     "transition",
+     "z-index",
+     "theme"
     ]
-  },
-  "doc": {
-    "markdownEngine": "vue"
-  }
+   ],
+   [
+    "modules",
+    [
+     "i18n",
+     "common"
+    ]
+   ],
+   [
+    "components",
+    [
+     "icon",
+     "uibutton",
+     "copyrightlabel",
+     "uiselect",
+     "wistiavideo",
+     "privacypolicylink"
+    ]
+   ],
+   [
+    "infrastructure",
+    [
+     "doc-layout",
+     "types"
+    ]
+   ]
+  ]
+ },
+ "doc": {
+  "markdownEngine": "vue"
+ }
 }
