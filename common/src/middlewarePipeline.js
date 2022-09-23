@@ -12,4 +12,4 @@ function _middlewarePipeline(context, middleware, index) {
   };
 }
 
-//export default middlewarePipeline;
+export default _middlewarePipeline;
