@@ -1,3 +1,7 @@
+import middlewarePipeline from './middlewarePipeline.js';
+
+export const middlewarePipeline = middlewarePipeline;
+
 export let resizeOverlay = function (elementID) {
   resize();
 
