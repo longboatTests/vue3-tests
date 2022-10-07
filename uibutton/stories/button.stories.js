@@ -1,4 +1,4 @@
-import Button from '~/uibutton/src/Button.vue';
+import Button from '~/uibutton/src/ButtonCss.vue';
 
 export const text = () => ({
   components: { Button },
@@ -15,28 +15,6 @@ export const outline = () => ({
   template: `<Button class='ux-btn ux-btn--outline'>Outline</Button>`,
 });
 
-/*
-export const outline_small = () => ({
-  components: { Button },
-  template: `<Button class='btn btn--small btn--outline'>outline</Button>`,
-});
-
-export const outline_medium = () => ({
-  components: { Button },
-  template: `<Button class='btn btn--medium btn--outline'>outline</Button>`,
-});
-
-export const outline_large = () => ({
-  components: { Button },
-  template: `<Button class='btn btn--large btn--outline'>outline</Button>`,
-});
-
-export const outline_xLarge = () => ({
-  components: { Button },
-  template: `<Button class='btn btn--x-large btn--outline'>outline</Button>`,
-});
-*/
-
 export const outline_disabled = () => ({
   components: { Button },
   template: `<Button class='ux-btn ux-btn--outline' disabled>Outline</Button>`,
@@ -52,14 +30,30 @@ export const primary_disabled = () => ({
   template: `<Button class='ux-btn ux-btn--primary' disabled>Primary</Button>`,
 });
 
+// Sizes
+export const primary_tiny = () => ({
+  components: { Button },
+  template: `<Button class='ux-btn ux-btn--primary ux-btn--tiny'>Primary</Button>`,
+});
+
 export const primary_small = () => ({
   components: { Button },
   template: `<Button class='ux-btn ux-btn--primary ux-btn--small'>Primary</Button>`,
 });
 
+export const primary_medium = () => ({
+  components: { Button },
+  template: `<Button class='ux-btn ux-btn--primary ux-btn--medium'>Primary</Button>`,
+});
+
 export const primary_large = () => ({
   components: { Button },
   template: `<Button class='ux-btn ux-btn--primary ux-btn--large'>Primary</Button>`,
+});
+
+export const primary_x_large = () => ({
+  components: { Button },
+  template: `<Button class='ux-btn ux-btn--primary ux-btn--x-large'>Primary</Button>`,
 });
 
 export const secondary = () => ({

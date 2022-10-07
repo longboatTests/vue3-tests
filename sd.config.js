@@ -3,7 +3,7 @@ module.exports = {
   platforms: {
     css: {
       transformGroup: 'css',
-      prefix: 'sd',
+      prefix: 'ux',
       buildPath: 'tokens/',
       files: [
         {

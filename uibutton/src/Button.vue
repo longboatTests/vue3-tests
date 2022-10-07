@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-$ux-btn-radius: 5px !default;
+$ux-btn-border-radius: 5px !default;
 $ux-btn-primary: #2ed13b !default;
 $ux-btn-secondary: #fd3b37 !default;
 $ux-btn-tertiary: #cc17c6 !default;
@@ -237,7 +237,7 @@ $tertiary-ux-btn-bg-color: (
 
   padding: map-get($ux-btn-padding, default);
   font-size: map-get($ux-btn-text-size, default);
-  border-radius: $ux-btn-radius;
+  border-radius: $ux-btn-border-radius;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: none;
