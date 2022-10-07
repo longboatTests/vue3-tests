@@ -13,7 +13,8 @@
      "border-radius",
      "transition",
      "z-index",
-     "theme"
+     "theme",
+     "border"
     ]
    ],
    [
