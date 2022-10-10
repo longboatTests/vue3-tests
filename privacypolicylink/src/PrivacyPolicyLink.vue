@@ -20,7 +20,7 @@ export default {
      */
     locale: {
       type: String,
-      required: true,
+      required: false,
       default: 'en',
     },
   },
