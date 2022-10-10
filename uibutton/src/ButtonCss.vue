@@ -36,8 +36,8 @@ $ux-btn-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1) !default;
 $ux-btn-box-shadow-hover: 0px 2px 3px 2px rgba(0, 0, 0, 0.2) !default;
 
 /**
-Button Size
- */
+  Button Size
+   */
 $ux-btn-size-tiny-padding: 4px 16px !default;
 $ux-btn-size-small-padding: 6px 20px !default;
 $ux-btn-size-medium-padding: 10px 24px !default;
@@ -51,8 +51,8 @@ $ux-btn-size-large-textSize: 1.2rem !default;
 $ux-btn-size-x-large-textSize: 1.4rem !default;
 
 /**
-Button themes/colors/styles
-*/
+  Button themes/colors/styles
+  */
 //Default/Text button
 $ux-btn-theme-text-default-textColor: $ux-btn-color-primary !default;
 $ux-btn-theme-text-disabled-textColor: $ux-btn-color-disabled !default;
@@ -212,10 +212,10 @@ $ux-btn-theme-tertiary-onactive-bgColor: darken(
 ) !default;
 
 /**
-  -----------------------
-  BUTTON STYLES
-  ----------------------
- */
+    -----------------------
+    BUTTON STYLES
+    ----------------------
+   */
 .ux-btn {
   // Default/Text Button
   color: var(--ux-color-primary-100, $ux-btn-theme-text-default-textColor);
@@ -404,12 +404,14 @@ $ux-btn-theme-tertiary-onactive-bgColor: darken(
     border: solid $ux-btn-border-width
       $ux-btn-theme-tertiary-default-borderColor;
     box-shadow: $ux-btn-box-shadow;
+
     &:disabled {
       color: $ux-btn-theme-tertiary-disabled-textColor;
       border: solid $ux-btn-border-width
         $ux-btn-theme-tertiary-disabled-borderColor;
       background: $ux-btn-theme-tertiary-disabled-bgColor;
       cursor: not-allowed;
+
       &:hover {
         color: $ux-btn-theme-tertiary-disabled-textColor;
         border: solid $ux-btn-border-width
@@ -417,18 +419,21 @@ $ux-btn-theme-tertiary-onactive-bgColor: darken(
         background: $ux-btn-theme-tertiary-disabled-bgColor;
       }
     }
+
     &:hover {
       color: $ux-btn-theme-tertiary-onhover-textColor;
       border: solid $ux-btn-border-width
         $ux-btn-theme-tertiary-onhover-borderColor;
       background: $ux-btn-theme-tertiary-onhover-bgColor;
     }
+
     &:focus {
       color: $ux-btn-theme-tertiary-onfocus-textColor;
       border: solid $ux-btn-border-width
         $ux-btn-theme-tertiary-onfocus-borderColor;
       background: $ux-btn-theme-tertiary-onfocus-bgColor;
     }
+
     &:active {
       color: $ux-btn-theme-tertiary-onactive-textColor;
       border: solid $ux-btn-border-width
@@ -438,24 +443,28 @@ $ux-btn-theme-tertiary-onactive-bgColor: darken(
   }
 
   /**
-      SIZES
-  */
+        SIZES
+    */
   &--tiny {
     padding: var(--ux-btn-size-tiny-padding, $ux-btn-size-tiny-padding);
     font-size: var(--ux-btn-size-tiny-textSize, $ux-btn-size-tiny-textSize);
   }
+
   &--small {
     padding: var(--ux-btn-size-small-padding, $ux-btn-size-small-padding);
     font-size: var(--ux-btn-size-small-textSize, $ux-btn-size-small-textSize);
   }
+
   &--medium {
     padding: var(--ux-btn-size-medium-padding, $ux-btn-size-medium-padding);
     font-size: var(--ux-btn-size-medium-textSize, $ux-btn-size-medium-textSize);
   }
+
   &--large {
     padding: var(--ux-btn-size-large-padding, $ux-btn-size-large-padding);
     font-size: var(--ux-btn-size-large-textSize, $ux-btn-size-large-textSize);
   }
+
   &--x-large {
     padding: var(--ux-btn-size-x-large-padding, $ux-btn-size-x-large-padding);
     font-size: var(
