@@ -25,389 +25,693 @@ export default {
 </script>
 
 <style lang="scss">
+$ux-btn-transition: 0.3s !default;
 $ux-btn-border-radius: 5px !default;
-$ux-btn-primary: #2ed13b !default;
-$ux-btn-secondary: #fd3b37 !default;
-$ux-btn-tertiary: #cc17c6 !default;
-$ux-btn-disabled: #aeb8c0 !default;
-$ux-btn-white: #fff !default;
+$ux-btn-color-primary: #2ed13b !default;
+$ux-btn-color-secondary: #fd3b37 !default;
+$ux-btn-color-tertiary: #cc17c6 !default;
+$ux-btn-color-disabled: #aeb8c0 !default;
+$ux-btn-color-white: #fff !default;
 $ux-btn-border-width: 1px !default;
 $ux-btn-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1) !default;
 $ux-btn-box-shadow-hover: 0px 2px 3px 2px rgba(0, 0, 0, 0.2) !default;
-$ux-btn-padding: (
-  small: 4px 16px,
-  default: 12px 24px,
-  large: 16px 24px,
+
+/**
+Button Size
+ */
+$ux-btn-size-tiny-padding: 4px 16px !default;
+$ux-btn-size-small-padding: 6px 20px !default;
+$ux-btn-size-medium-padding: 10px 24px !default;
+$ux-btn-size-large-padding: 12px 28px !default;
+$ux-btn-size-x-large-padding: 14px 32px !default;
+
+$ux-btn-size-tiny-textSize: 0.7rem !default;
+$ux-btn-size-small-textSize: 0.9rem !default;
+$ux-btn-size-medium-textSize: 1rem !default;
+$ux-btn-size-large-textSize: 1.2rem !default;
+$ux-btn-size-x-large-textSize: 1.4rem !default;
+
+/**
+Button themes/colors/styles
+*/
+//Default/Text button
+$ux-btn-theme-text-default-textColor: $ux-btn-color-primary !default;
+$ux-btn-theme-text-disabled-textColor: $ux-btn-color-disabled !default;
+$ux-btn-theme-text-onhover-textColor: darken(
+  $ux-btn-color-primary,
+  15%
+) !default;
+$ux-btn-theme-text-onfocus-textColor: darken(
+  $ux-btn-color-primary,
+  15%
+) !default;
+$ux-btn-theme-text-onactive-textColor: darken(
+  $ux-btn-color-primary,
+  15%
 ) !default;
 
-$ux-btn-text-size: (
-  small: 0.7rem,
-  default: 1rem,
-  large: 1.2rem,
+$ux-btn-theme-text-default-borderColor: transparent !default;
+$ux-btn-theme-text-disabled-borderColor: transparent !default;
+$ux-btn-theme-text-onhover-borderColor: darken(
+  $ux-btn-color-primary,
+  15%
+) !default;
+$ux-btn-theme-text-onfocus-borderColor: darken(
+  $ux-btn-color-primary,
+  15%
+) !default;
+$ux-btn-theme-text-onactive-borderColor: darken(
+  $ux-btn-color-primary,
+  15%
 ) !default;
 
-@mixin ux-btn-default-style(
-  $ux-btn-text-color,
-  $ux-btn-border-color,
-  $ux-btn-bg-color
-) {
-  color: $ux-btn-text-color;
-  background: $ux-btn-bg-color;
-  border: solid $ux-btn-border-width $ux-btn-border-color;
-  box-shadow: $ux-btn-box-shadow;
-}
-
-@mixin ux-btn-disabled-style(
-  $ux-btn-text-color,
-  $ux-btn-border-color,
-  $ux-btn-bg-color
-) {
-  &:disabled {
-    color: $ux-btn-text-color;
-    border: solid $ux-btn-border-width $ux-btn-border-color;
-    background: $ux-btn-bg-color;
-    cursor: not-allowed;
-
-    &:hover {
-      color: $ux-btn-text-color;
-      border: solid $ux-btn-border-width $ux-btn-border-color;
-      background: $ux-btn-bg-color;
-    }
-  }
-}
-
-@mixin ux-btn-hover-style(
-  $ux-btn-text-color,
-  $ux-btn-border-color,
-  $ux-btn-bg-color
-) {
-  &:hover {
-    color: $ux-btn-text-color;
-    border: solid $ux-btn-border-width $ux-btn-border-color;
-    background: $ux-btn-bg-color;
-  }
-}
-
-@mixin ux-btn-focus-style(
-  $ux-btn-text-color,
-  $ux-btn-border-color,
-  $ux-btn-bg-color
-) {
-  &:focus {
-    color: $ux-btn-text-color;
-    border: solid $ux-btn-border-width $ux-btn-border-color;
-    background: $ux-btn-bg-color;
-  }
-}
-
-@mixin ux-btn-active-style(
-  $ux-btn-text-color,
-  $ux-btn-border-color,
-  $ux-btn-bg-color
-) {
-  &:active {
-    color: $ux-btn-text-color;
-    border: solid $ux-btn-border-width $ux-btn-border-color;
-    background: $ux-btn-bg-color;
-  }
-}
-
-//Default button. The default button is a text button
-$default-ux-btn-text-color: (
-  default: $ux-btn-primary,
-  disabled: $ux-btn-disabled,
-  onhover: darken($ux-btn-primary, 15%),
-  onfocus: darken($ux-btn-primary, 10%),
-  onactive: darken($ux-btn-primary, 10%),
-) !default;
-
-$default-ux-btn-border-color: (
-  default: transparent,
-  disabled: transparent,
-  onhover: darken($ux-btn-primary, 15%),
-  onfocus: darken($ux-btn-primary, 10%),
-  onactive: darken($ux-btn-primary, 10%),
-) !default;
-$default-ux-btn-bg-color: (
-  default: none,
-  disabled: none,
-  onhover: none,
-  onfocus: none,
-  onactive: none,
-) !default;
+$ux-btn-theme-text-default-bgColor: none !default;
+$ux-btn-theme-text-disabled-bgColor: none !default;
+$ux-btn-theme-text-onhover-bgColor: none !default;
+$ux-btn-theme-text-onfocus-bgColor: none !default;
+$ux-btn-theme-text-onactive-bgColor: none !default;
 
 //Outline/Bordered button
-$outline-ux-btn-text-color: (
-  default: $ux-btn-primary,
-  disabled: lighten(black, 70%),
-  onhover: darken($ux-btn-primary, 20%),
-  onfocus: darken($ux-btn-primary, 20%),
-  onactive: darken($ux-btn-primary, 20%),
+$ux-btn-theme-outline-default-textColor: $ux-btn-color-primary !default;
+$ux-btn-theme-outline-disabled-textColor: lighten(black, 70%) !default;
+$ux-btn-theme-outline-onhover-textColor: darken(
+  $ux-btn-color-primary,
+  20%
 ) !default;
-$outline-ux-btn-border-color: (
-  default: $ux-btn-primary,
-  disabled: $ux-btn-disabled,
-  onhover: darken($ux-btn-primary, 20%),
-  onfocus: darken($ux-btn-primary, 20%),
-  onactive: darken($ux-btn-primary, 20%),
+$ux-btn-theme-outline-onfocus-textColor: darken(
+  $ux-btn-color-primary,
+  20%
 ) !default;
-$outline-ux-btn-bg-color: (
-  default: none,
-  disabled: none,
-  onhover: none,
-  onfocus: none,
-  onactive: none,
+$ux-btn-theme-outline-onactive-textColor: darken(
+  $ux-btn-color-primary,
+  20%
 ) !default;
 
+$ux-btn-theme-outline-default-borderColor: $ux-btn-color-primary !default;
+$ux-btn-theme-outline-disabled-borderColor: $ux-btn-color-disabled !default;
+$ux-btn-theme-outline-onhover-borderColor: darken(
+  $ux-btn-color-primary,
+  20%
+) !default;
+$ux-btn-theme-outline-onfocus-borderColor: darken(
+  $ux-btn-color-primary,
+  20%
+) !default;
+$ux-btn-theme-outline-onactive-borderColor: darken(
+  $ux-btn-color-primary,
+  20%
+) !default;
+
+$ux-btn-theme-outline-default-bgColor: none !default;
+$ux-btn-theme-outline-disabled-bgColor: none !default;
+$ux-btn-theme-outline-onhover-bgColor: none !default;
+$ux-btn-theme-outline-onfocus-bgColor: none !default;
+$ux-btn-theme-outline-onactive-bgColor: none !default;
+
 //Primary button
-$primary-ux-btn-text-color: (
-  default: white,
-  disabled: $ux-btn-white,
-  onhover: white,
-  onfocus: white,
-  onactive: white,
+$ux-btn-theme-primary-default-textColor: white !default;
+$ux-btn-theme-primary-disabled-textColor: $ux-btn-color-white !default;
+$ux-btn-theme-primary-onhover-textColor: white !default;
+$ux-btn-theme-primary-onfocus-textColor: white !default;
+$ux-btn-theme-primary-onactive-textColor: white !default;
+
+$ux-btn-theme-primary-default-borderColor: transparent !default;
+$ux-btn-theme-primary-disabled-borderColor: transparent !default;
+$ux-btn-theme-primary-onhover-borderColor: transparent !default;
+$ux-btn-theme-primary-onfocus-borderColor: transparent !default;
+$ux-btn-theme-primary-onactive-borderColor: transparent !default;
+
+$ux-btn-theme-primary-default-bgColor: $ux-btn-color-primary !default;
+$ux-btn-theme-primary-disabled-bgColor: lighten(black, 70%) !default;
+$ux-btn-theme-primary-onhover-bgColor: darken(
+  $ux-btn-color-primary,
+  15%
 ) !default;
-$primary-ux-btn-border-color: (
-  default: transparent,
-  disabled: transparent,
-  onhover: transparent,
-  onfocus: transparent,
-  onactive: transparent,
+$ux-btn-theme-primary-onfocus-bgColor: darken(
+  $ux-btn-color-primary,
+  15%
 ) !default;
-$primary-ux-btn-bg-color: (
-  default: $ux-btn-primary,
-  disabled: lighten(black, 70%),
-  onhover: darken($ux-btn-primary, 15%),
-  onfocus: darken($ux-btn-primary, 10%),
-  onactive: darken($ux-btn-primary, 10%),
+$ux-btn-theme-primary-onactive-bgColor: darken(
+  $ux-btn-color-primary,
+  15%
 ) !default;
 
 //Secondary button
-$secondary-ux-btn-text-color: (
-  default: white,
-  disabled: $ux-btn-white,
-  onhover: white,
-  onfocus: white,
-  onactive: white,
+$ux-btn-theme-secondary-default-textColor: white !default;
+$ux-btn-theme-secondary-disabled-textColor: $ux-btn-color-white !default;
+$ux-btn-theme-secondary-onhover-textColor: white !default;
+$ux-btn-theme-secondary-onfocus-textColor: white !default;
+$ux-btn-theme-secondary-onactive-textColor: white !default;
+
+$ux-btn-theme-secondary-default-borderColor: transparent !default;
+$ux-btn-theme-secondary-disabled-borderColor: transparent !default;
+$ux-btn-theme-secondary-onhover-borderColor: transparent !default;
+$ux-btn-theme-secondary-onfocus-borderColor: transparent !default;
+$ux-btn-theme-secondary-onactive-borderColor: transparent !default;
+
+$ux-btn-theme-secondary-default-bgColor: $ux-btn-color-secondary !default;
+$ux-btn-theme-secondary-disabled-bgColor: lighten(black, 70%) !default;
+$ux-btn-theme-secondary-onhover-bgColor: darken(
+  $ux-btn-color-secondary,
+  15%
 ) !default;
-$secondary-ux-btn-border-color: (
-  default: transparent,
-  disabled: transparent,
-  onhover: transparent,
-  onfocus: transparent,
-  onactive: transparent,
+$ux-btn-theme-secondary-onfocus-bgColor: darken(
+  $ux-btn-color-secondary,
+  15%
 ) !default;
-$secondary-ux-btn-bg-color: (
-  default: $ux-btn-secondary,
-  disabled: lighten(black, 70%),
-  onhover: darken($ux-btn-secondary, 15%),
-  onfocus: darken($ux-btn-secondary, 10%),
-  onactive: darken($ux-btn-secondary, 10%),
+$ux-btn-theme-secondary-onactive-bgColor: darken(
+  $ux-btn-color-secondary,
+  15%
 ) !default;
 
 //Tertiary button
-$tertiary-ux-btn-text-color: (
-  default: white,
-  disabled: $ux-btn-white,
-  onhover: white,
-  onfocus: white,
-  onactive: white,
+$ux-btn-theme-tertiary-default-textColor: white !default;
+$ux-btn-theme-tertiary-disabled-textColor: $ux-btn-color-white !default;
+$ux-btn-theme-tertiary-onhover-textColor: white !default;
+$ux-btn-theme-tertiary-onfocus-textColor: white !default;
+$ux-btn-theme-tertiary-onactive-textColor: white !default;
+
+$ux-btn-theme-tertiary-default-borderColor: transparent !default;
+$ux-btn-theme-tertiary-disabled-borderColor: transparent !default;
+$ux-btn-theme-tertiary-onhover-borderColor: transparent !default;
+$ux-btn-theme-tertiary-onfocus-borderColor: transparent !default;
+$ux-btn-theme-tertiary-onactive-borderColor: transparent !default;
+
+$ux-btn-theme-tertiary-default-bgColor: $ux-btn-color-tertiary !default;
+$ux-btn-theme-tertiary-disabled-bgColor: lighten(black, 70%) !default;
+$ux-btn-theme-tertiary-onhover-bgColor: darken(
+  $ux-btn-color-tertiary,
+  15%
 ) !default;
-$tertiary-ux-btn-border-color: (
-  default: transparent,
-  disabled: transparent,
-  onhover: transparent,
-  onfocus: transparent,
-  onactive: transparent,
+$ux-btn-theme-tertiary-onfocus-bgColor: darken(
+  $ux-btn-color-tertiary,
+  15%
 ) !default;
-$tertiary-ux-btn-bg-color: (
-  default: $ux-btn-tertiary,
-  disabled: lighten(black, 70%),
-  onhover: darken($ux-btn-tertiary, 15%),
-  onfocus: darken($ux-btn-tertiary, 10%),
-  onactive: darken($ux-btn-tertiary, 10%),
+$ux-btn-theme-tertiary-onactive-bgColor: darken(
+  $ux-btn-color-tertiary,
+  15%
 ) !default;
 
+/**
+  -----------------------
+  BUTTON STYLES
+  ----------------------
+ */
 .ux-btn {
-  @include ux-btn-default-style(
-    map-get($default-ux-btn-text-color, default),
-    map-get($default-ux-btn-border-color, default),
-    map-get($default-ux-btn-bg-color, default)
+  // Default/Text Button
+  color: var(--ux-color-primary-100, $ux-btn-theme-text-default-textColor);
+  background: var(
+    --ux-btn--theme-text-onhover-bgColor,
+    $ux-btn-theme-text-default-bgColor
   );
+  border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+    var(
+      --ux-btn-theme-text-default-borderColor,
+      $ux-btn-theme-text-default-borderColor
+    );
 
-  padding: map-get($ux-btn-padding, default);
-  font-size: map-get($ux-btn-text-size, default);
-  border-radius: $ux-btn-border-radius;
+  padding: var(--ux-btn-size-medium-padding, $ux-btn-size-medium-padding);
+  font-size: var(--ux-btn-size-medium-textSize, $ux-btn-size-medium-textSize);
+  border-radius: var(--ux-btn-border-radius, $ux-btn-border-radius);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: none;
+  transition: all var(--ux-btn-transition, $ux-btn-transition) ease;
 
-  @include ux-btn-disabled-style(
-    map-get($default-ux-btn-text-color, disabled),
-    map-get($default-ux-btn-border-color, disabled),
-    map-get($default-ux-btn-bg-color, disabled)
-  );
+  &:disabled {
+    color: var(
+      --ux-btn-theme-text-disabled-textColor,
+      $ux-btn-theme-text-disabled-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-disabled-borderColor;
+    background: var(
+      --ux-btn-theme-text-disabled-bgColor,
+      $ux-btn-theme-text-disabled-bgColor
+    );
+    cursor: not-allowed;
 
-  @include ux-btn-hover-style(
-    map-get($default-ux-btn-text-color, onhover),
-    map-get($default-ux-btn-border-color, onhover),
-    map-get($default-ux-btn-bg-color, onhover)
-  );
-
-  @include ux-btn-focus-style(
-    map-get($default-ux-btn-text-color, onfocus),
-    map-get($default-ux-btn-border-color, onfocus),
-    map-get($default-ux-btn-bg-color, onfocus)
-  );
-
-  @include ux-btn-active-style(
-    map-get($default-ux-btn-text-color, onactive),
-    map-get($default-ux-btn-border-color, onactive),
-    map-get($default-ux-btn-bg-color, onactive)
-  );
-
-  /**
-      SIZES
-    */
-  &--small {
-    padding: map-get($ux-btn-padding, small);
-    font-size: map-get($ux-btn-text-size, small);
+    &:hover {
+      color: var(
+        --ux-btn-theme-text-onhover-textColor,
+        $ux-btn-theme-text-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        $ux-btn-theme-text-disabled-borderColor;
+      background: var(
+        --ux-btn-theme-text-disabled-bgColor,
+        $ux-btn-theme-text-disabled-bgColor
+      );
+    }
   }
 
-  &--large {
-    padding: map-get($ux-btn-padding, large);
-    font-size: map-get($ux-btn-text-size, large);
+  &:hover {
+    color: var(
+      --ux-btn-theme-text-onhover-textColor,
+      $ux-btn-theme-text-onhover-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-onhover-borderColor;
+    background: $ux-btn-theme-text-onhover-bgColor;
+  }
+
+  &:focus {
+    color: var(
+      --ux-btn-theme-text-onfocus-textColor,
+      $ux-btn-theme-text-onfocus-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-onfocus-borderColor;
+    background: var(
+      --ux-btn-theme-text-onfocus-bgColor,
+      $ux-btn-theme-text-onfocus-bgColor
+    );
+  }
+
+  &:active {
+    color: var(
+      --ux-btn-theme-text-onactive-textColor,
+      $ux-btn-theme-text-onactive-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-text-onactive-borderColor,
+        $ux-btn-theme-text-onactive-borderColor
+      );
+    background: var(
+      --ux-btn-theme-text-onactive-bgColor,
+      $ux-btn-theme-text-onactive-bgColor
+    );
   }
 
   // Outline/Bordered Button
   &--outline {
-    @include ux-btn-default-style(
-      map-get($outline-ux-btn-text-color, default),
-      map-get($outline-ux-btn-border-color, default),
-      map-get($outline-ux-btn-bg-color, default)
+    color: var(
+      --ux-btn-theme-outline-default-textColor,
+      $ux-btn-theme-outline-default-textColor
     );
+    background: var(
+      --ux-btn-theme-outline-default-bgColor,
+      $ux-btn-theme-outline-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-outline-default-borderColor,
+        $ux-btn-theme-outline-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
 
-    @include ux-btn-disabled-style(
-      map-get($outline-ux-btn-text-color, disabled),
-      map-get($outline-ux-btn-border-color, disabled),
-      map-get($outline-ux-btn-bg-color, disabled)
-    );
+    &:disabled {
+      color: var(
+        --ux-btn-theme-outline-disabled-textColor,
+        $ux-btn-theme-outline-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-disabled-borderColor,
+          $ux-btn-theme-outline-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-disabled-bgColor,
+        $ux-btn-theme-outline-disabled-bgColor
+      );
+      cursor: not-allowed;
 
-    @include ux-btn-hover-style(
-      map-get($outline-ux-btn-text-color, onhover),
-      map-get($outline-ux-btn-border-color, onhover),
-      map-get($outline-ux-btn-bg-color, onhover)
-    );
+      &:hover {
+        color: var(
+          --ux-btn-theme-outline-disabled-textColor,
+          $ux-btn-theme-outline-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-outline-disabled-borderColor,
+            $ux-btn-theme-outline-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-outline-disabled-bgColor,
+          $ux-btn-theme-outline-disabled-bgColor
+        );
+      }
+    }
 
-    @include ux-btn-focus-style(
-      map-get($outline-ux-btn-text-color, onfocus),
-      map-get($outline-ux-btn-border-color, onfocus),
-      map-get($outline-ux-btn-bg-color, onfocus)
-    );
+    &:hover {
+      color: var(
+        --ux-btn-theme-outline-onhover-textColor,
+        $ux-btn-theme-outline-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onhover-borderColor,
+          $ux-btn-theme-outline-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onhover-bgColor,
+        $ux-btn-theme-outline-onhover-bgColor
+      );
+    }
 
-    @include ux-btn-active-style(
-      map-get($outline-ux-btn-text-color, onactive),
-      map-get($outline-ux-btn-border-color, onactive),
-      map-get($outline-ux-btn-bg-color, onactive)
-    );
+    &:focus {
+      color: var(
+        --ux-btn-theme-outline-onfocus-textColor,
+        $ux-btn-theme-outline-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onfocus-borderColor,
+          $ux-btn-theme-outline-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onfocus-bgColor,
+        $ux-btn-theme-outline-onfocus-bgColor
+      );
+    }
+
+    &:active {
+      color: var(
+        --ux-btn-theme-outline-onactive-textColor,
+        $ux-btn-theme-outline-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onactive-borderColor,
+          $ux-btn-theme-outline-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onactive-bgColor,
+        $ux-btn-theme-outline-onactive-bgColor
+      );
+    }
   }
 
   // Primary Button
   &--primary {
-    @include ux-btn-default-style(
-      map-get($primary-ux-btn-text-color, default),
-      map-get($primary-ux-btn-border-color, default),
-      map-get($primary-ux-btn-bg-color, default)
+    color: var(
+      --ux-btn-theme-primary-default-textColor,
+      $ux-btn-theme-primary-default-textColor
     );
+    background: var(
+      --ux-btn-theme-primary-default-bgColor,
+      $ux-btn-theme-primary-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-primary-default-borderColor,
+        $ux-btn-theme-primary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
 
-    @include ux-btn-disabled-style(
-      map-get($primary-ux-btn-text-color, disabled),
-      map-get($primary-ux-btn-border-color, disabled),
-      map-get($primary-ux-btn-bg-color, disabled)
-    );
+    &:disabled {
+      color: var(
+        --ux-btn-theme-primary-disabled-textColor,
+        $ux-btn-theme-primary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-disabled-borderColor,
+          $ux-btn-theme-primary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-disabled-bgColor,
+        $ux-btn-theme-primary-disabled-bgColor
+      );
+      cursor: not-allowed;
 
-    @include ux-btn-hover-style(
-      map-get($primary-ux-btn-text-color, onhover),
-      map-get($primary-ux-btn-border-color, onhover),
-      map-get($primary-ux-btn-bg-color, onhover)
-    );
+      &:hover {
+        color: var(
+          --ux-btn-theme-primary-disabled-textColor,
+          $ux-btn-theme-primary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-primary-disabled-borderColor,
+            $ux-btn-theme-primary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-primary-disabled-bgColor,
+          $ux-btn-theme-primary-disabled-bgColor
+        );
+      }
+    }
 
-    @include ux-btn-focus-style(
-      map-get($primary-ux-btn-text-color, onfocus),
-      map-get($primary-ux-btn-border-color, onfocus),
-      map-get($primary-ux-btn-bg-color, onfocus)
-    );
+    &:hover {
+      color: var(
+        --ux-btn-theme-primary-onhover-textColor,
+        $ux-btn-theme-primary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onhover-borderColor,
+          $ux-btn-theme-primary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onhover-bgColor,
+        $ux-btn-theme-primary-onhover-bgColor
+      );
+    }
 
-    @include ux-btn-active-style(
-      map-get($primary-ux-btn-text-color, onactive),
-      map-get($primary-ux-btn-border-color, onactive),
-      map-get($primary-ux-btn-bg-color, onactive)
-    );
+    &:focus {
+      color: var(
+        --ux-btn-theme-primary-onfocus-textColor,
+        $ux-btn-theme-primary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onfocus-borderColor,
+          $ux-btn-theme-primary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onfocus-bgColor,
+        $ux-btn-theme-primary-onfocus-bgColor
+      );
+    }
+
+    &:active {
+      color: var(
+        --ux-btn-theme-primary-onactive-textColor,
+        $ux-btn-theme-primary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onactive-borderColor,
+          $ux-btn-theme-primary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onactive-bgColor,
+        $ux-btn-theme-primary-onactive-bgColor
+      );
+    }
   }
 
   // Secondary Button
   &--secondary {
-    @include ux-btn-default-style(
-      map-get($secondary-ux-btn-text-color, default),
-      map-get($secondary-ux-btn-border-color, default),
-      map-get($secondary-ux-btn-bg-color, default)
+    color: var(
+      --ux-btn-theme-secondary-default-textColor,
+      $ux-btn-theme-secondary-default-textColor
     );
-
-    @include ux-btn-disabled-style(
-      map-get($secondary-ux-btn-text-color, disabled),
-      map-get($secondary-ux-btn-border-color, disabled),
-      map-get($secondary-ux-btn-bg-color, disabled)
+    background: var(
+      --ux-btn-theme-secondary-default-bgColor,
+      $ux-btn-theme-secondary-default-bgColor
     );
-
-    @include ux-btn-hover-style(
-      map-get($secondary-ux-btn-text-color, onhover),
-      map-get($secondary-ux-btn-border-color, onhover),
-      map-get($secondary-ux-btn-bg-color, onhover)
-    );
-
-    @include ux-btn-focus-style(
-      map-get($secondary-ux-btn-text-color, onfocus),
-      map-get($secondary-ux-btn-border-color, onfocus),
-      map-get($secondary-ux-btn-bg-color, onfocus)
-    );
-
-    @include ux-btn-active-style(
-      map-get($secondary-ux-btn-text-color, onactive),
-      map-get($secondary-ux-btn-border-color, onactive),
-      map-get($secondary-ux-btn-bg-color, onactive)
-    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-secondary-default-borderColor,
+        $ux-btn-theme-secondary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
+    &:disabled {
+      color: var(
+        --ux-btn-theme-secondary-disabled-textColor,
+        $ux-btn-theme-secondary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-disabled-borderColor,
+          $ux-btn-theme-secondary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-disabled-bgColor,
+        $ux-btn-theme-secondary-disabled-bgColor
+      );
+      cursor: not-allowed;
+      &:hover {
+        color: var(
+          --ux-btn-theme-secondary-disabled-textColor,
+          $ux-btn-theme-secondary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-secondary-disabled-borderColor,
+            $ux-btn-theme-secondary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-secondary-disabled-bgColor,
+          $ux-btn-theme-secondary-disabled-bgColor
+        );
+      }
+    }
+    &:hover {
+      color: var(
+        --ux-btn-theme-secondary-onhover-textColor,
+        $ux-btn-theme-secondary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onhover-borderColor,
+          $ux-btn-theme-secondary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onhover-bgColor,
+        $ux-btn-theme-secondary-onhover-bgColor
+      );
+    }
+    &:focus {
+      color: var(
+        --ux-btn-theme-secondary-onfocus-textColor,
+        $ux-btn-theme-secondary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onfocus-borderColor,
+          $ux-btn-theme-secondary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onfocus-bgColor,
+        $ux-btn-theme-secondary-onfocus-bgColor
+      );
+    }
+    &:active {
+      color: var(
+        --ux-btn-theme-secondary-onactive-textColor,
+        $ux-btn-theme-secondary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onactive-borderColor,
+          $ux-btn-theme-secondary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onactive-bgColor,
+        $ux-btn-theme-secondary-onactive-bgColor
+      );
+    }
   }
 
   // Tertiary Button
   &--tertiary {
-    @include ux-btn-default-style(
-      map-get($tertiary-ux-btn-text-color, default),
-      map-get($tertiary-ux-btn-border-color, default),
-      map-get($tertiary-ux-btn-bg-color, default)
+    color: var(
+      --ux-btn-theme-tertiary-default-textColor,
+      $ux-btn-theme-tertiary-default-textColor
     );
-
-    @include ux-btn-disabled-style(
-      map-get($tertiary-ux-btn-text-color, disabled),
-      map-get($tertiary-ux-btn-border-color, disabled),
-      map-get($tertiary-ux-btn-bg-color, disabled)
+    background: var(
+      --ux-btn-theme-tertiary-default-bgColor,
+      $ux-btn-theme-tertiary-default-bgColor
     );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-tertiary-default-borderColor,
+        $ux-btn-theme-tertiary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
+    &:disabled {
+      color: var(
+        --ux-btn-theme-tertiary-disabled-textColor,
+        $ux-btn-theme-tertiary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-disabled-borderColor,
+          $ux-btn-theme-tertiary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-disabled-bgColor,
+        $ux-btn-theme-tertiary-disabled-bgColor
+      );
+      cursor: not-allowed;
+      &:hover {
+        color: var(
+          --ux-btn-theme-tertiary-disabled-textColor,
+          $ux-btn-theme-tertiary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-tertiary-disabled-borderColor,
+            $ux-btn-theme-tertiary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-tertiary-disabled-bgColor,
+          $ux-btn-theme-tertiary-disabled-bgColor
+        );
+      }
+    }
+    &:hover {
+      color: var(
+        --ux-btn-theme-tertiary-onhover-textColor,
+        $ux-btn-theme-tertiary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onhover-borderColor,
+          $ux-btn-theme-tertiary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onhover-bgColor,
+        $ux-btn-theme-tertiary-onhover-bgColor
+      );
+    }
+    &:focus {
+      color: var(
+        --ux-btn-theme-tertiary-onfocus-textColor,
+        $ux-btn-theme-tertiary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onfocus-borderColor,
+          $ux-btn-theme-tertiary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onfocus-bgColor,
+        $ux-btn-theme-tertiary-onfocus-bgColor
+      );
+    }
+    &:active {
+      color: var(
+        --ux-btn-theme-tertiary-onactive-textColor,
+        $ux-btn-theme-tertiary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onactive-borderColor,
+          $ux-btn-theme-tertiary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onactive-bgColor,
+        $ux-btn-theme-tertiary-onactive-bgColor
+      );
+    }
+  }
 
-    @include ux-btn-hover-style(
-      map-get($tertiary-ux-btn-text-color, onhover),
-      map-get($tertiary-ux-btn-border-color, onhover),
-      map-get($tertiary-ux-btn-bg-color, onhover)
-    );
-
-    @include ux-btn-focus-style(
-      map-get($tertiary-ux-btn-text-color, onfocus),
-      map-get($tertiary-ux-btn-border-color, onfocus),
-      map-get($tertiary-ux-btn-bg-color, onfocus)
-    );
-
-    @include ux-btn-active-style(
-      map-get($tertiary-ux-btn-text-color, onactive),
-      map-get($tertiary-ux-btn-border-color, onactive),
-      map-get($tertiary-ux-btn-bg-color, onactive)
+  /**
+      SIZES
+  */
+  &--tiny {
+    padding: var(--ux-btn-size-tiny-padding, $ux-btn-size-tiny-padding);
+    font-size: var(--ux-btn-size-tiny-textSize, $ux-btn-size-tiny-textSize);
+  }
+  &--small {
+    padding: var(--ux-btn-size-small-padding, $ux-btn-size-small-padding);
+    font-size: var(--ux-btn-size-small-textSize, $ux-btn-size-small-textSize);
+  }
+  &--medium {
+    padding: var(--ux-btn-size-medium-padding, $ux-btn-size-medium-padding);
+    font-size: var(--ux-btn-size-medium-textSize, $ux-btn-size-medium-textSize);
+  }
+  &--large {
+    padding: var(--ux-btn-size-large-padding, $ux-btn-size-large-padding);
+    font-size: var(--ux-btn-size-large-textSize, $ux-btn-size-large-textSize);
+  }
+  &--x-large {
+    padding: var(--ux-btn-size-x-large-padding, $ux-btn-size-x-large-padding);
+    font-size: var(
+      --ux-btn-size-x-large-textSize,
+      $ux-btn-size-x-large-textSize
     );
   }
 }

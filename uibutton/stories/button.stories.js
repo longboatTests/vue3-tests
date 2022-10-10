@@ -1,4 +1,4 @@
-import Button from '~/uibutton/src/ButtonCss.vue';
+import Button from '~/uibutton/src/Button.vue';
 import '~/tokens/_variables.css';
 
 export const text = () => ({
