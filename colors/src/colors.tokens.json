@@ -1,5 +1,8 @@
 {
   "color": {
+    "samples": {
+      "value": "#fff"
+    },
     "white": {
       "value": "#fff"
     },

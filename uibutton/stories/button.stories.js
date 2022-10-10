@@ -1,4 +1,5 @@
 import Button from '~/uibutton/src/ButtonCss.vue';
+import '~/tokens/_variables.css';
 
 export const text = () => ({
   components: { Button },
