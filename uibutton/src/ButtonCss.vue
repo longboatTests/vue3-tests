@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
+$ux-btn-transition: 0.3s !default;
 $ux-btn-border-radius: 5px !default;
 $ux-btn-color-primary: #2ed13b !default;
 $ux-btn-color-secondary: #fd3b37 !default;
@@ -223,217 +224,467 @@ $ux-btn-theme-tertiary-onactive-bgColor: darken(
     --ux-btn--theme-text-onhover-bgColor,
     $ux-btn-theme-text-default-bgColor
   );
-  border: solid $ux-btn-border-width $ux-btn-theme-text-default-borderColor;
-  box-shadow: $ux-btn-box-shadow;
+  border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+    var(
+      --ux-btn-theme-text-default-borderColor,
+      $ux-btn-theme-text-default-borderColor
+    );
 
-  padding: $ux-btn-size-medium-padding;
-  font-size: $ux-btn-size-medium-textSize;
-  border-radius: $ux-btn-border-radius;
+  padding: var(--ux-btn-size-medium-padding, $ux-btn-size-medium-padding);
+  font-size: var(--ux-btn-size-medium-textSize, $ux-btn-size-medium-textSize);
+  border-radius: var(--ux-btn-border-radius, $ux-btn-border-radius);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: none;
+  transition: all var(--ux-btn-transition, $ux-btn-transition) ease;
 
   &:disabled {
-    color: var(--ux-color-dark-70, $ux-btn-theme-text-disabled-textColor);
-    border: solid $ux-btn-border-width $ux-btn-theme-text-disabled-borderColor;
-    background: $ux-btn-theme-text-disabled-bgColor;
+    color: var(
+      --ux-btn-theme-text-disabled-textColor,
+      $ux-btn-theme-text-disabled-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-disabled-borderColor;
+    background: var(
+      --ux-btn-theme-text-disabled-bgColor,
+      $ux-btn-theme-text-disabled-bgColor
+    );
     cursor: not-allowed;
 
     &:hover {
-      color: $ux-btn-theme-text-disabled-textColor;
-      border: solid $ux-btn-border-width $ux-btn-theme-text-disabled-borderColor;
-      background: $ux-btn-theme-text-disabled-bgColor;
+      color: var(
+        --ux-btn-theme-text-onhover-textColor,
+        $ux-btn-theme-text-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        $ux-btn-theme-text-disabled-borderColor;
+      background: var(
+        --ux-btn-theme-text-disabled-bgColor,
+        $ux-btn-theme-text-disabled-bgColor
+      );
     }
   }
 
   &:hover {
-    color: var(--ux-color-primary-100, $ux-btn-theme-text-onhover-textColor);
-    border: solid $ux-btn-border-width $ux-btn-theme-text-onhover-borderColor;
+    color: var(
+      --ux-btn-theme-text-onhover-textColor,
+      $ux-btn-theme-text-onhover-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-onhover-borderColor;
     background: $ux-btn-theme-text-onhover-bgColor;
   }
 
   &:focus {
-    color: $ux-btn-theme-text-onfocus-textColor;
-    border: solid $ux-btn-border-width $ux-btn-theme-text-onfocus-borderColor;
-    background: $ux-btn-theme-text-onfocus-bgColor;
+    color: var(
+      --ux-btn-theme-text-onfocus-textColor,
+      $ux-btn-theme-text-onfocus-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      $ux-btn-theme-text-onfocus-borderColor;
+    background: var(
+      --ux-btn-theme-text-onfocus-bgColor,
+      $ux-btn-theme-text-onfocus-bgColor
+    );
   }
 
   &:active {
-    color: $ux-btn-theme-text-onactive-textColor;
-    border: solid $ux-btn-border-width $ux-btn-theme-text-onactive-borderColor;
-    background: $ux-btn-theme-text-onactive-bgColor;
+    color: var(
+      --ux-btn-theme-text-onactive-textColor,
+      $ux-btn-theme-text-onactive-textColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-text-onactive-borderColor,
+        $ux-btn-theme-text-onactive-borderColor
+      );
+    background: var(
+      --ux-btn-theme-text-onactive-bgColor,
+      $ux-btn-theme-text-onactive-bgColor
+    );
   }
 
   // Outline/Bordered Button
   &--outline {
-    color: $ux-btn-theme-outline-default-textColor;
-    background: $ux-btn-theme-outline-default-bgColor;
-    border: solid $ux-btn-border-width $ux-btn-theme-outline-default-borderColor;
-    box-shadow: $ux-btn-box-shadow;
+    color: var(
+      --ux-btn-theme-outline-default-textColor,
+      $ux-btn-theme-outline-default-textColor
+    );
+    background: var(
+      --ux-btn-theme-outline-default-bgColor,
+      $ux-btn-theme-outline-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-outline-default-borderColor,
+        $ux-btn-theme-outline-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
 
     &:disabled {
-      color: $ux-btn-theme-outline-disabled-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-outline-disabled-borderColor;
-      background: $ux-btn-theme-outline-disabled-bgColor;
+      color: var(
+        --ux-btn-theme-outline-disabled-textColor,
+        $ux-btn-theme-outline-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-disabled-borderColor,
+          $ux-btn-theme-outline-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-disabled-bgColor,
+        $ux-btn-theme-outline-disabled-bgColor
+      );
       cursor: not-allowed;
 
       &:hover {
-        color: $ux-btn-theme-outline-disabled-textColor;
-        border: solid $ux-btn-border-width
-          $ux-btn-theme-outline-disabled-borderColor;
-        background: $ux-btn-theme-outline-disabled-bgColor;
+        color: var(
+          --ux-btn-theme-outline-disabled-textColor,
+          $ux-btn-theme-outline-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-outline-disabled-borderColor,
+            $ux-btn-theme-outline-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-outline-disabled-bgColor,
+          $ux-btn-theme-outline-disabled-bgColor
+        );
       }
     }
 
     &:hover {
-      color: $ux-btn-theme-outline-onhover-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-outline-onhover-borderColor;
-      background: $ux-btn-theme-outline-onhover-bgColor;
+      color: var(
+        --ux-btn-theme-outline-onhover-textColor,
+        $ux-btn-theme-outline-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onhover-borderColor,
+          $ux-btn-theme-outline-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onhover-bgColor,
+        $ux-btn-theme-outline-onhover-bgColor
+      );
     }
 
     &:focus {
-      color: $ux-btn-theme-outline-onfocus-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-outline-onfocus-borderColor;
-      background: $ux-btn-theme-outline-onfocus-bgColor;
+      color: var(
+        --ux-btn-theme-outline-onfocus-textColor,
+        $ux-btn-theme-outline-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onfocus-borderColor,
+          $ux-btn-theme-outline-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onfocus-bgColor,
+        $ux-btn-theme-outline-onfocus-bgColor
+      );
     }
 
     &:active {
-      color: $ux-btn-theme-outline-onactive-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-outline-onactive-borderColor;
-      background: $ux-btn-theme-outline-onactive-bgColor;
+      color: var(
+        --ux-btn-theme-outline-onactive-textColor,
+        $ux-btn-theme-outline-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-outline-onactive-borderColor,
+          $ux-btn-theme-outline-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-outline-onactive-bgColor,
+        $ux-btn-theme-outline-onactive-bgColor
+      );
     }
   }
 
   // Primary Button
   &--primary {
-    color: $ux-btn-theme-primary-default-textColor;
-    background: $ux-btn-theme-primary-default-bgColor;
-    border: solid $ux-btn-border-width $ux-btn-theme-primary-default-borderColor;
-    box-shadow: $ux-btn-box-shadow;
+    color: var(
+      --ux-btn-theme-primary-default-textColor,
+      $ux-btn-theme-primary-default-textColor
+    );
+    background: var(
+      --ux-btn-theme-primary-default-bgColor,
+      $ux-btn-theme-primary-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-primary-default-borderColor,
+        $ux-btn-theme-primary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
 
     &:disabled {
-      color: $ux-btn-theme-primary-disabled-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-primary-disabled-borderColor;
-      background: $ux-btn-theme-primary-disabled-bgColor;
+      color: var(
+        --ux-btn-theme-primary-disabled-textColor,
+        $ux-btn-theme-primary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-disabled-borderColor,
+          $ux-btn-theme-primary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-disabled-bgColor,
+        $ux-btn-theme-primary-disabled-bgColor
+      );
       cursor: not-allowed;
 
       &:hover {
-        color: $ux-btn-theme-primary-disabled-textColor;
-        border: solid $ux-btn-border-width
-          $ux-btn-theme-primary-disabled-borderColor;
-        background: $ux-btn-theme-primary-disabled-bgColor;
+        color: var(
+          --ux-btn-theme-primary-disabled-textColor,
+          $ux-btn-theme-primary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-primary-disabled-borderColor,
+            $ux-btn-theme-primary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-primary-disabled-bgColor,
+          $ux-btn-theme-primary-disabled-bgColor
+        );
       }
     }
 
     &:hover {
-      color: $ux-btn-theme-primary-onhover-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-primary-onhover-borderColor;
-      background: $ux-btn-theme-primary-onhover-bgColor;
+      color: var(
+        --ux-btn-theme-primary-onhover-textColor,
+        $ux-btn-theme-primary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onhover-borderColor,
+          $ux-btn-theme-primary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onhover-bgColor,
+        $ux-btn-theme-primary-onhover-bgColor
+      );
     }
 
     &:focus {
-      color: $ux-btn-theme-primary-onfocus-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-primary-onfocus-borderColor;
-      background: $ux-btn-theme-primary-onfocus-bgColor;
+      color: var(
+        --ux-btn-theme-primary-onfocus-textColor,
+        $ux-btn-theme-primary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onfocus-borderColor,
+          $ux-btn-theme-primary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onfocus-bgColor,
+        $ux-btn-theme-primary-onfocus-bgColor
+      );
     }
 
     &:active {
-      color: $ux-btn-theme-primary-onactive-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-primary-onactive-borderColor;
-      background: $ux-btn-theme-primary-onactive-bgColor;
+      color: var(
+        --ux-btn-theme-primary-onactive-textColor,
+        $ux-btn-theme-primary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-primary-onactive-borderColor,
+          $ux-btn-theme-primary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-primary-onactive-bgColor,
+        $ux-btn-theme-primary-onactive-bgColor
+      );
     }
   }
 
   // Secondary Button
   &--secondary {
-    color: $ux-btn-theme-secondary-default-textColor;
-    background: $ux-btn-theme-secondary-default-bgColor;
-    border: solid $ux-btn-border-width
-      $ux-btn-theme-secondary-default-borderColor;
-    box-shadow: $ux-btn-box-shadow;
-
+    color: var(
+      --ux-btn-theme-secondary-default-textColor,
+      $ux-btn-theme-secondary-default-textColor
+    );
+    background: var(
+      --ux-btn-theme-secondary-default-bgColor,
+      $ux-btn-theme-secondary-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-secondary-default-borderColor,
+        $ux-btn-theme-secondary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
     &:disabled {
-      color: $ux-btn-theme-secondary-disabled-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-secondary-disabled-borderColor;
-      background: $ux-btn-theme-secondary-disabled-bgColor;
+      color: var(
+        --ux-btn-theme-secondary-disabled-textColor,
+        $ux-btn-theme-secondary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-disabled-borderColor,
+          $ux-btn-theme-secondary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-disabled-bgColor,
+        $ux-btn-theme-secondary-disabled-bgColor
+      );
       cursor: not-allowed;
-
       &:hover {
-        color: $ux-btn-theme-secondary-disabled-textColor;
-        border: solid $ux-btn-border-width
-          $ux-btn-theme-secondary-disabled-borderColor;
-        background: $ux-btn-theme-secondary-disabled-bgColor;
+        color: var(
+          --ux-btn-theme-secondary-disabled-textColor,
+          $ux-btn-theme-secondary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-secondary-disabled-borderColor,
+            $ux-btn-theme-secondary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-secondary-disabled-bgColor,
+          $ux-btn-theme-secondary-disabled-bgColor
+        );
       }
     }
-
     &:hover {
-      color: $ux-btn-theme-secondary-onhover-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-secondary-onhover-borderColor;
-      background: $ux-btn-theme-secondary-onhover-bgColor;
+      color: var(
+        --ux-btn-theme-secondary-onhover-textColor,
+        $ux-btn-theme-secondary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onhover-borderColor,
+          $ux-btn-theme-secondary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onhover-bgColor,
+        $ux-btn-theme-secondary-onhover-bgColor
+      );
     }
-
     &:focus {
-      color: $ux-btn-theme-secondary-onfocus-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-secondary-onfocus-borderColor;
-      background: $ux-btn-theme-secondary-onfocus-bgColor;
+      color: var(
+        --ux-btn-theme-secondary-onfocus-textColor,
+        $ux-btn-theme-secondary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onfocus-borderColor,
+          $ux-btn-theme-secondary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onfocus-bgColor,
+        $ux-btn-theme-secondary-onfocus-bgColor
+      );
     }
-
     &:active {
-      color: $ux-btn-theme-secondary-onactive-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-secondary-onactive-borderColor;
-      background: $ux-btn-theme-secondary-onactive-bgColor;
+      color: var(
+        --ux-btn-theme-secondary-onactive-textColor,
+        $ux-btn-theme-secondary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-secondary-onactive-borderColor,
+          $ux-btn-theme-secondary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-secondary-onactive-bgColor,
+        $ux-btn-theme-secondary-onactive-bgColor
+      );
     }
   }
 
   // Tertiary Button
   &--tertiary {
-    color: $ux-btn-theme-tertiary-default-textColor;
-    background: $ux-btn-theme-tertiary-default-bgColor;
-    border: solid $ux-btn-border-width
-      $ux-btn-theme-tertiary-default-borderColor;
-    box-shadow: $ux-btn-box-shadow;
+    color: var(
+      --ux-btn-theme-tertiary-default-textColor,
+      $ux-btn-theme-tertiary-default-textColor
+    );
+    background: var(
+      --ux-btn-theme-tertiary-default-bgColor,
+      $ux-btn-theme-tertiary-default-bgColor
+    );
+    border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+      var(
+        --ux-btn-theme-tertiary-default-borderColor,
+        $ux-btn-theme-tertiary-default-borderColor
+      );
+    box-shadow: var(--ux-btn-box-shadow-default, $ux-btn-box-shadow);
     &:disabled {
-      color: $ux-btn-theme-tertiary-disabled-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-tertiary-disabled-borderColor;
-      background: $ux-btn-theme-tertiary-disabled-bgColor;
+      color: var(
+        --ux-btn-theme-tertiary-disabled-textColor,
+        $ux-btn-theme-tertiary-disabled-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-disabled-borderColor,
+          $ux-btn-theme-tertiary-disabled-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-disabled-bgColor,
+        $ux-btn-theme-tertiary-disabled-bgColor
+      );
       cursor: not-allowed;
       &:hover {
-        color: $ux-btn-theme-tertiary-disabled-textColor;
-        border: solid $ux-btn-border-width
-          $ux-btn-theme-tertiary-disabled-borderColor;
-        background: $ux-btn-theme-tertiary-disabled-bgColor;
+        color: var(
+          --ux-btn-theme-tertiary-disabled-textColor,
+          $ux-btn-theme-tertiary-disabled-textColor
+        );
+        border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+          var(
+            --ux-btn-theme-tertiary-disabled-borderColor,
+            $ux-btn-theme-tertiary-disabled-borderColor
+          );
+        background: var(
+          --ux-btn-theme-tertiary-disabled-bgColor,
+          $ux-btn-theme-tertiary-disabled-bgColor
+        );
       }
     }
     &:hover {
-      color: $ux-btn-theme-tertiary-onhover-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-tertiary-onhover-borderColor;
-      background: $ux-btn-theme-tertiary-onhover-bgColor;
+      color: var(
+        --ux-btn-theme-tertiary-onhover-textColor,
+        $ux-btn-theme-tertiary-onhover-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onhover-borderColor,
+          $ux-btn-theme-tertiary-onhover-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onhover-bgColor,
+        $ux-btn-theme-tertiary-onhover-bgColor
+      );
     }
     &:focus {
-      color: $ux-btn-theme-tertiary-onfocus-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-tertiary-onfocus-borderColor;
-      background: $ux-btn-theme-tertiary-onfocus-bgColor;
+      color: var(
+        --ux-btn-theme-tertiary-onfocus-textColor,
+        $ux-btn-theme-tertiary-onfocus-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onfocus-borderColor,
+          $ux-btn-theme-tertiary-onfocus-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onfocus-bgColor,
+        $ux-btn-theme-tertiary-onfocus-bgColor
+      );
     }
     &:active {
-      color: $ux-btn-theme-tertiary-onactive-textColor;
-      border: solid $ux-btn-border-width
-        $ux-btn-theme-tertiary-onactive-borderColor;
-      background: $ux-btn-theme-tertiary-onactive-bgColor;
+      color: var(
+        --ux-btn-theme-tertiary-onactive-textColor,
+        $ux-btn-theme-tertiary-onactive-textColor
+      );
+      border: solid var(--ux-btn-border-width, $ux-btn-border-width)
+        var(
+          --ux-btn-theme-tertiary-onactive-borderColor,
+          $ux-btn-theme-tertiary-onactive-borderColor
+        );
+      background: var(
+        --ux-btn-theme-tertiary-onactive-bgColor,
+        $ux-btn-theme-tertiary-onactive-bgColor
+      );
     }
   }
 
