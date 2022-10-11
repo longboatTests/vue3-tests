@@ -1,15 +1,9 @@
 /**
  * Do not edit directly
- * Generated on Thu, 06 Oct 2022 10:39:48 GMT
+ * Generated on Mon, 10 Oct 2022 16:57:08 GMT
  */
 
 :root {
-  --ux-border-radius-small: 0.125rem;
-  --ux-border-radius-medium: 0.25rem;
-  --ux-border-radius-large: 0.5rem;
-  --ux-border-radius-x-large: 1rem;
-  --ux-border-radius-circle: 50%;
-  --ux-border-radius-pill: 9999px;
   --ux-color-white: #ffffff;
   --ux-color-black-50: #808080;
   --ux-color-black-60: #666666;
@@ -26,31 +20,4 @@
   --ux-color-tertiary-90: #202b38;
   --ux-color-tertiary-100: #202b38;
   --ux-color-tertiary-110: #2e3e51;
-  --ux-color-disabled: #cccccc;
-  --ux-btn-border-radius: 0.125rem;
-  --ux-btn-size-tiny-padding: 2px 8px;
-  --ux-btn-size-tiny-text-size: 0.5em;
-  --ux-btn-size-small-padding: 6px 16px;
-  --ux-btn-size-small-text-size: 0.7em;
-  --ux-btn-size-medium-padding: 12px 24px;
-  --ux-btn-size-medium-text-size: 1em;
-  --ux-btn-size-large-padding: 16px 32px;
-  --ux-btn-size-large-text-size: 1.2em;
-  --ux-btn-size-x-large-padding: 20px 40px;
-  --ux-btn-size-x-large-text-size: 1.5em;
-  --ux-btn-theme-text-default-bg-color: none;
-  --ux-btn-theme-text-default-text-color: #3082ce;
-  --ux-btn-theme-text-default-border-color: none;
-  --ux-btn-theme-text-disabled-bg-color: none;
-  --ux-btn-theme-text-disabled-text-color: #3082ce;
-  --ux-btn-theme-text-disabled-border-color: none;
-  --ux-btn-theme-text-onhover-bg-color: none;
-  --ux-btn-theme-text-onhover-text-color: #3082ce;
-  --ux-btn-theme-text-onhover-border-color: none;
-  --ux-btn-theme-text-onactive-bg-color: none;
-  --ux-btn-theme-text-onactive-text-color: #3082ce;
-  --ux-btn-theme-text-onactive-border-color: none;
-  --ux-btn-theme-text-onfocus-bg-color: none;
-  --ux-btn-theme-text-onfocus-text-color: #3082ce;
-  --ux-btn-theme-text-onfocus-border-color: none;
 }
