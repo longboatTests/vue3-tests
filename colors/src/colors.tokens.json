@@ -1,5 +1,9 @@
 {
   "color": {
+    "background": {
+      "value": "#fff",
+      "darkValue": "#121212"
+    },
     "glu": {
       "value": "#fff",
       "darkValue": "#000"
