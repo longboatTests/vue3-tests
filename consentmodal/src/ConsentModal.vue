@@ -8,7 +8,7 @@
       v-on:accept="accepted()"
       v-on:close="rejected()"
     >
-      <div slot-scope="props">
+      <template v-slot:default="props">
         <p class="cookie-text">
           <!-- @slot Use this slot to add the body content to be displayed -->
           <slot name="body-content"></slot>
@@ -29,13 +29,14 @@
           <!-- @slot Use this slot to add the reject button label -->
           <slot name="reject-btn-text"></slot>
         </ui-button>
-      </div>
+      </template>
     </cookie-law>
   </div>
 </template>
 
 <script>
 import CookieLaw from 'vue-cookie-law';
+import Cookies from 'js-cookie';
 import UiButtonVue from '../../uibutton/src/Button.vue';
 import PrivacyPolicyLinkVue from '../../privacypolicylink/src/PrivacyPolicyLink.vue';
 
@@ -60,7 +61,7 @@ export default {
     },
   },
   mounted() {
-    if (this.$cookies.get('CNcookies') === 'false') {
+    if (Cookies.get('CNcookies') === 'false') {
       document.getElementById('ux-consent-modal').style.display = 'none';
     }
   },
@@ -75,7 +76,7 @@ export default {
       this.$emit('consentAccepted', true);
     },
     rejected() {
-      this.$cookies.set('CNcookies', 'false', 0);
+      Cookies.set('CNcookies', 'false', 0);
       // Get the modal
       var modal = document.getElementById('ux-consent-modal');
       modal.style.display = 'none';
