@@ -1,5 +1,9 @@
 {
   "color": {
+    "glu": {
+      "value": "#fff",
+      "darkValue": "#000"
+    },
     "white": {
       "value": "#fff"
     },
