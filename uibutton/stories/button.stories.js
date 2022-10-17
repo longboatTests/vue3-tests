@@ -1,5 +1,6 @@
 import Button from '~/uibutton/src/Button.vue';
 import '~/tokens/variables.css';
+import '~/tokens/color-light.css';
 
 export const text = () => ({
   components: { Button },

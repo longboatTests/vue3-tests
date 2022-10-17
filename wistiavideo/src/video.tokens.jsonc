@@ -1,0 +1,14 @@
+{
+  "video": {
+    "icon": {
+      "bg-color": {
+        "default": {
+          "value": ""
+        },
+        "onhover": {
+          "value": ""
+        }
+      }
+    }
+  }
+}

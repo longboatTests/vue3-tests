@@ -28,31 +28,44 @@ export default {
 </script>
 
 <style lang="scss">
-$ux-privacy-policy-link-text-color: (
-  default: #333,
-  visited: #333,
-  onfocus: #333,
-  onactive: #333,
-  onhover: #333,
-) !default;
+$ux-privacy-policy-link-text-color-default: #333 !default;
+$ux-privacy-policy-link-text-color-visited: #333 !default;
+$ux-privacy-policy-link-text-color-onhover: #333 !default;
+$ux-privacy-policy-link-text-color-onactive: #333 !default;
+$ux-privacy-policy-link-text-color-onfocus: #333 !default;
 
 .ux-copyright-link {
   text-decoration: none;
-  color: map-get($ux-privacy-policy-link-text-color, default);
+  color: var(
+    --ux-privacy-policy-link-text-color-default,
+    $ux-privacy-policy-link-text-color-default
+  );
 
   &:visited {
-    color: map-get($ux-privacy-policy-link-text-color, visited);
+    color: var(
+      --ux-privacy-policy-link-text-color-visited,
+      $ux-privacy-policy-link-text-color-visited
+    );
   }
 
   &:focus {
-    color: map-get($ux-privacy-policy-link-text-color, onfocus);
+    color: var(
+      --ux-privacy-policy-link-text-color-onhover,
+      $ux-privacy-policy-link-text-color-onhover
+    );
   }
 
   &:active {
-    color: map-get($ux-privacy-policy-link-text-color, onactive);
+    color: var(
+      --ux-privacy-policy-link-text-color-onactive,
+      $ux-privacy-policy-link-text-color-onactive
+    );
   }
   &:hover {
-    color: map-get($ux-privacy-policy-link-text-color, onhover);
+    color: var(
+      --ux-privacy-policy-link-text-color-onfocus,
+      $ux-privacy-policy-link-text-color-onfocus
+    );
   }
 
   &:active,

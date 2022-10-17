@@ -1,5 +1,5 @@
 <template>
-  <span class="ux-copyright-label__text">
+  <span class="ux-copyright-label">
     {{ copyrightText }}
     <slot />
   </span>
@@ -29,7 +29,7 @@ export default {
 $ux-copyright-label-text-color: #333 !default;
 
 .ux-copyright-label {
-  color: $ux-copyright-label-text-color;
+  color: var(--ux-copyright-label-text-color, $ux-copyright-label-text-color);
   margin: 0;
   padding: 0;
 }

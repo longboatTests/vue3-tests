@@ -58,18 +58,22 @@ $ux-select-padding: 0.7em 3.5em 0.7em 1em !default;
 $ux-select-caret-color: black !default;
 
 .ux-select {
-  border: 1px solid $ux-select-border-color;
-  border-radius: $ux-select-border-radius;
-  background: $ux-select-bg-color;
-  color: $ux-select-text-color;
-  padding: $ux-select-padding;
+  border: 1px solid var(--ux-select-border-color, $ux-select-border-color);
+  border-radius: var(--ux-select-border-radius, $ux-select-border-radius);
+  background: var(--ux-select-bg-color, $ux-select-bg-color);
+  color: var(--ux-select-text-color, $ux-select-text-color);
+  padding: var(--ux-select-padding, $ux-select-padding);
   appearance: none;
   background-image: linear-gradient(
       45deg,
       transparent 50%,
-      $ux-select-caret-color 50%
+      var(--ux-select-caret-color, $ux-select-caret-color) 50%
     ),
-    linear-gradient(135deg, $ux-select-caret-color 50%, transparent 50%);
+    linear-gradient(
+      135deg,
+      var(--ux-select-caret-color, $ux-select-caret-color) 50%,
+      transparent 50%
+    );
   background-position: calc(100% - 20px) calc(1em + 2px),
     calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
