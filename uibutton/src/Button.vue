@@ -94,10 +94,7 @@ $ux-btn-theme-text-onactive-bg-color: none !default;
 //Outline/Bordered button
 $ux-btn-theme-outline-default-text-color: $ux-btn-color-primary !default;
 $ux-btn-theme-outline-disabled-text-color: lighten(black, 70%) !default;
-$ux-btn-theme-outline-onhover-text-color: darken(
-  $ux-btn-color-primary,
-  20%
-) !default;
+$ux-btn-theme-outline-onhover-text-color: white !default;
 $ux-btn-theme-outline-onfocus-text-color: darken(
   $ux-btn-color-primary,
   20%
@@ -109,10 +106,7 @@ $ux-btn-theme-outline-onactive-text-color: darken(
 
 $ux-btn-theme-outline-default-border-color: $ux-btn-color-primary !default;
 $ux-btn-theme-outline-disabled-border-color: $ux-btn-color-disabled !default;
-$ux-btn-theme-outline-onhover-border-color: darken(
-  $ux-btn-color-primary,
-  20%
-) !default;
+$ux-btn-theme-outline-onhover-border-color: transparent !default;
 $ux-btn-theme-outline-onfocus-border-color: darken(
   $ux-btn-color-primary,
   20%
@@ -124,9 +118,9 @@ $ux-btn-theme-outline-onactive-border-color: darken(
 
 $ux-btn-theme-outline-default-bg-color: none !default;
 $ux-btn-theme-outline-disabled-bg-color: none !default;
-$ux-btn-theme-outline-onhover-bg-color: none !default;
-$ux-btn-theme-outline-onfocus-bg-color: none !default;
-$ux-btn-theme-outline-onactive-bg-color: none !default;
+$ux-btn-theme-outline-onhover-bg-color: $ux-btn-color-primary !default;
+$ux-btn-theme-outline-onfocus-bg-color: $ux-btn-color-primary !default;
+$ux-btn-theme-outline-onactive-bg-color: $ux-btn-color-primary !default;
 
 //Primary button
 $ux-btn-theme-primary-default-text-color: white !default;
@@ -285,6 +279,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
     background: $ux-btn-theme-text-onhover-bg-color;
   }
 
+  /*
   &:focus {
     color: var(
       --ux-btn-theme-text-onfocus-text-color,
@@ -300,6 +295,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
       $ux-btn-theme-text-onfocus-bg-color
     );
   }
+  */
 
   &:active {
     color: var(
@@ -383,6 +379,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
       );
     }
 
+    /*
     &:focus {
       color: var(
         --ux-btn-theme-outline-onfocus-text-color,
@@ -398,6 +395,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-outline-onfocus-bg-color
       );
     }
+    */
 
     &:active {
       color: var(
@@ -482,6 +480,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
       );
     }
 
+    /*
     &:focus {
       color: var(
         --ux-btn-theme-primary-onfocus-text-color,
@@ -497,6 +496,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-primary-onfocus-bg-color
       );
     }
+    */
 
     &:active {
       color: var(
@@ -577,6 +577,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-secondary-onhover-bg-color
       );
     }
+    /*
     &:focus {
       color: var(
         --ux-btn-theme-secondary-onfocus-text-color,
@@ -592,6 +593,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-secondary-onfocus-bg-color
       );
     }
+    */
     &:active {
       color: var(
         --ux-btn-theme-secondary-onactive-text-color,
@@ -671,6 +673,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-tertiary-onhover-bg-color
       );
     }
+    /*
     &:focus {
       color: var(
         --ux-btn-theme-tertiary-onfocus-text-color,
@@ -686,6 +689,7 @@ $ux-btn-theme-tertiary-onactive-bg-color: darken(
         $ux-btn-theme-tertiary-onfocus-bg-color
       );
     }
+    */
     &:active {
       color: var(
         --ux-btn-theme-tertiary-onactive-text-color,

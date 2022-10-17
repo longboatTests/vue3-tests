@@ -15,7 +15,8 @@
     "dependencies": {
         "vue": "^3.2.25",
         "vue-cookie-law": "^1.13.3",
-        "js-cookie": "^3.0.1"
+        "js-cookie": "^3.0.1",
+        "jsonc-simple-parser": "^2.2.1"
     },
     "devDependencies": {
         "@divriots/dockit-core": "^0.9.1",

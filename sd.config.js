@@ -1,23 +1,12 @@
-/*
-module.exports = {
-  source: ['../*.tokens.json'],
-  platforms: {
-    css: {
-      transformGroup: 'css',
-      prefix: 'ux',
-      buildPath: 'tokens/',
-      files: [
-        {
-          destination: '_variables.css',
-          format: 'css/variables',
-        },
-      ],
-    },
-  },
-};
-*/
-
 import StyleDictionary from 'style-dictionary';
+import JSONC from 'jsonc-simple-parser';
+
+StyleDictionary.registerParser({
+  pattern: /\.json$/,
+  parse: ({ contents, filePath }) => {
+    return JSONC.parse(contents);
+  },
+});
 
 function darkFormatWrapper(format) {
   return function (args) {
@@ -47,9 +36,10 @@ export default {
   // add custom formats
   format: {
     cssDark: darkFormatWrapper('css/variables'),
+    cssLight: darkFormatWrapper('css/variables'),
   },
   //...
-  source: ['**/*.tokens.json'],
+  source: ['**/*.tokens.jsonc'],
   platforms: {
     css: {
       transformGroup: 'css',
@@ -59,15 +49,22 @@ export default {
         {
           destination: 'variables.css',
           format: 'css/variables',
+          filter: (token) => token.attributes.category !== 'color',
           options: {
             outputReferences: true,
           },
         },
         {
-          destination: 'variables-dark.css',
+          destination: 'color-dark.css',
           format: 'cssDark',
           filter: (token) =>
             token.darkValue && token.attributes.category === 'color',
+        },
+        {
+          destination: 'color-light.css',
+          format: 'cssLight',
+          filter: (token) =>
+            token.value && token.attributes.category === 'color',
         },
       ],
     },

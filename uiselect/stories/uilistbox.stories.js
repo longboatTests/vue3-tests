@@ -1,5 +1,7 @@
 import UiSelect from '~/uiselect/src/UiSelect.vue';
 import { $options } from '~/uiselect/src/options.js';
+import '~/tokens/variables.css';
+import '~/tokens/color-light.css';
 
 export const select_manual = () => ({
   components: { UiSelect },

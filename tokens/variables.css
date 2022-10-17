@@ -1,9 +1,12 @@
 /**
  * Do not edit directly
- * Generated on Thu, 13 Oct 2022 16:35:05 GMT
+ * Generated on Mon, 17 Oct 2022 16:43:48 GMT
  */
 
 :root {
+  --ux-video-icon-bg-color-onhover: ;
+  --ux-video-icon-bg-color-default: ;
+  --ux-select-bg-color: white;
   --ux-btn-theme-tertiary-onfocus-border-color: transparent;
   --ux-btn-theme-tertiary-onactive-border-color: transparent;
   --ux-btn-theme-tertiary-onhover-border-color: transparent;
@@ -47,28 +50,19 @@
   --ux-transition-medium: 250ms;
   --ux-transition-slow: 500ms;
   --ux-transition-x-slow: 1000ms;
-  --ux-color-tertiary-110: #e60000;
-  --ux-color-tertiary-100: #ff0000;
-  --ux-color-tertiary-90: #ff1919;
-  --ux-color-secondary-110: #3caa79;
-  --ux-color-secondary-100: #41b883;
-  --ux-color-secondary-90: #55c392;
-  --ux-color-primary-110: #2b75ba;
-  --ux-color-primary-100: #3082ce;
-  --ux-color-primary-90: #458fd4;
-  --ux-color-black-100: #000000;
-  --ux-color-black-90: #191919;
-  --ux-color-black-80: #333333;
-  --ux-color-black-70: #4d4d4d;
-  --ux-color-black-60: #666666;
-  --ux-color-black-50: #808080;
-  --ux-color-black-40: #999999;
-  --ux-color-black-30: #b3b3b3;
-  --ux-color-black-20: #cccccc;
-  --ux-color-black-10: #e6e6e6;
-  --ux-color-white: #ffffff;
-  --ux-color-glu: #ffffff;
-  --ux-color-background: #ffffff;
+  --ux-spacing-09: 3;
+  --ux-spacing-08: 2.5;
+  --ux-spacing-07: 2;
+  --ux-spacing-06: 1.5;
+  --ux-spacing-05: 1;
+  --ux-spacing-04: 0.75;
+  --ux-spacing-03: 0.5;
+  --ux-spacing-02: 0.25;
+  --ux-spacing-01: 0.125;
+  --ux-spacing-13: 160;
+  --ux-spacing-12: 6;
+  --ux-spacing-11: 5;
+  --ux-spacing-10: 4;
   --ux-border-width-thick: 3px;
   --ux-border-width-medium: 2px;
   --ux-border-width-thin: 1px;
@@ -78,6 +72,15 @@
   --ux-border-radius-large: 0.5rem;
   --ux-border-radius-medium: 0.25rem;
   --ux-border-radius-small: 0.125rem;
+  --ux-select-caret-color: var(--ux-color-black-90);
+  --ux-select-text-color: var(--ux-color-black-80);
+  --ux-select-padding-right: var(--ux-spacing-02);
+  --ux-select-padding-left: var(--ux-spacing-02);
+  --ux-select-padding-bottom: var(--ux-spacing-02);
+  --ux-select-padding-top: var(--ux-spacing-02);
+  --ux-select-border-color: var(--ux-color-black-70);
+  --ux-select-border-width: var(--ux-border-width-thin);
+  --ux-select-border-radius: var(--ux-border-radius-medium);
   --ux-btn-theme-tertiary-onfocus-text-color: var(--ux-color-white);
   --ux-btn-theme-tertiary-onfocus-bg-color: var(--ux-color-tertiary-110);
   --ux-btn-theme-tertiary-onactive-text-color: var(--ux-color-white);
@@ -130,4 +133,10 @@
   --ux-btn-border-width: var(--ux-border-width-thin);
   --ux-btn-border-radius: var(--ux-border-radius-medium);
   --ux-btn-transition: var(--ux-transition-medium);
+  --ux-privacy-policy-link-text-color-onfocus: var(--ux-color-black-60);
+  --ux-privacy-policy-link-text-color-onactive: var(--ux-color-black-60);
+  --ux-privacy-policy-link-text-color-onhover: var(--ux-color-black-60);
+  --ux-privacy-policy-link-text-color-visited: var(--ux-color-black-60);
+  --ux-privacy-policy-link-text-color-default: var(--ux-color-black-60);
+  --ux-copyright-label-text-color: var(--ux-color-black-60);
 }

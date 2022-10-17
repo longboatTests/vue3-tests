@@ -1,5 +1,7 @@
 import CopyrightLabel from '~/copyrightlabel/src/CopyrightLabel.vue';
 import PrivacyPolicyLink from '~/privacypolicylink/src/PrivacyPolicyLink.vue';
+import '~/tokens/variables.css';
+import '~/tokens/color-light.css';
 
 export const copyrightLabel = () => ({
   components: { CopyrightLabel, PrivacyPolicyLink },
