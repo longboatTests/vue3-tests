@@ -1,5 +1,7 @@
 import WistiaVideo from '~/wistiavideo/src/WistiaVideo.vue';
 import Icon from '~/icon/src/Icon.vue';
+import '~/tokens/variables.css';
+import '~/tokens/color-light.css';
 
 const Template = (args) => ({
   components: { WistiaVideo, Icon },

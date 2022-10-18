@@ -3,11 +3,45 @@
     "icon": {
       "bg-color": {
         "default": {
-          "value": ""
+          "value": "white"
         },
         "onhover": {
-          "value": ""
+          "value": "{color.primary.100}"
         }
+      },
+      "color": {
+        "default": {
+          "value": "{color.primary.100}"
+        },
+        "onhover": {
+          "value": "white"
+        }
+      }
+    },
+    "overlay": {
+      "bg-color": {
+        "onhover": {
+          "value": "{color.primary.100}"
+        }
+      }
+    },
+    "strip": {
+      "color": {
+        "value": "{color.primary.100}"
+      },
+      "height": {
+        "value": "16px"
+      }
+    },
+    "box-shadow": {
+      "value": "-1px 1px 9px 2px #bd45101f"
+    },
+    "info": {
+      "bg-color": {
+        "value": "white"
+      },
+      "box-shadow": {
+        "value": "-1px 1px 9px 2px #bd45101f"
       }
     }
   }
