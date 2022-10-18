@@ -87,6 +87,7 @@ $ux-video-strip-color: #bd4411 !default;
 $ux-video-strip-height: 16px !default;
 $ux-video-box-shadow: -1px 1px 9px 2px #bd45101f !default;
 $ux-video-info-bg-color: white !default;
+$ux-video-info-border-radius: 12px !default;
 $ux-video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
 .video {
   display: flex;
@@ -172,7 +173,10 @@ $ux-video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
   }
 
   &__info {
-    border-radius: 12px;
+    border-radius: var(
+      --ux-video-info-border-radius,
+      $ux-video-info-border-radius
+    );
     background-color: var(--ux-video-info-bg-color, $ux-video-info-bg-color);
     position: relative;
     transition: all 0.3s ease;
