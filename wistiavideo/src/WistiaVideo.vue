@@ -78,16 +78,16 @@ export default {
 </script>
 
 <style lang="scss">
-$video-icon-bgcolor: white !default;
-$video-icon-bgcolor-onhover: #bd4411 !default;
-$video-icon-color: #bd4411 !default;
-$video-icon-color-onhover: white !default;
-$video-overlay-bgcolor-onhover: #bd4411 !default;
-$video-strip-color: #bd4411 !default;
-$video-strip-height: 16px !default;
-$video-box-shadow: -1px 1px 9px 2px #bd45101f !default;
-$video-info-bgcolor: white !default;
-$video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
+$ux-video-icon-bg-color-default: white !default;
+$ux-video-icon-bg-color-onhover: #bd4411 !default;
+$ux-video-icon-color-default: #bd4411 !default;
+$ux-video-icon-color-onhover: white !default;
+$ux-video-overlay-bg-color-onhover: #bd4411 !default;
+$ux-video-strip-color: #bd4411 !default;
+$ux-video-strip-height: 16px !default;
+$ux-video-box-shadow: -1px 1px 9px 2px #bd45101f !default;
+$ux-video-info-bg-color: white !default;
+$ux-video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
 .video {
   display: flex;
   flex-direction: column;
@@ -97,9 +97,18 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
   }
 
   &__thumbnail-wrapper {
-    border-bottom: $video-strip-height $video-strip-color solid;
-    box-shadow: $video-box-shadow;
+    border-bottom: var(--ux-video-strip-height, $ux-video-strip-height)
+      var(--ux-video-strip-color, $ux-video-strip-color) solid;
+    box-shadow: var(--ux-video-box-shadow, $ux-video-box-shadow);
     // background-color: #eee;
+
+    i {
+      background: var(
+        --ux-video-icon-color-default,
+        $ux-video-icon-color-default
+      );
+      transition: all 0.3s ease;
+    }
 
     &:hover {
       .video__play-animator {
@@ -108,11 +117,17 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
       }
 
       i {
-        background: $video-icon-color-onhover;
+        background: var(
+          --ux-video-icon-color-onhover,
+          $ux-video-icon-color-onhover
+        );
       }
 
       .video__play-link-wrapper {
-        background: $video-icon-bgcolor-onhover;
+        background: var(
+          --ux-video-icon-bg-color-onhover,
+          $ux-video-icon-bg-color-onhover
+        );
       }
     }
   }
@@ -129,7 +144,7 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
     transform: translate(-50%, -50%);
 
     // border: solid 3px white;
-    background: $video-icon-bgcolor;
+    background: var(--ux-video-icon-bg-color, $ux-video-icon-bg-color-default);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -146,7 +161,10 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
     left: 50%;
     bottom: 50%;
     transform: translate(-50%, -50%);
-    background: $video-overlay-bgcolor-onhover;
+    background: var(
+      --ux-video-overlay-bg-color-onhover,
+      $ux-video-overlay-bg-color-onhover
+    );
     opacity: 0.5;
     width: 0%;
     height: 0%;
@@ -155,20 +173,15 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
 
   &__info {
     border-radius: 12px;
-    background-color: $video-info-bgcolor;
+    background-color: var(--ux-video-info-bg-color, $ux-video-info-bg-color);
     position: relative;
     transition: all 0.3s ease;
     top: -10px;
     padding: 20px 30px;
-    box-shadow: $video-info-box-shadow;
+    box-shadow: var(--ux-video-info-box-shadow, $ux-video-info-box-shadow);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  i {
-    background: $video-icon-color;
-    transition: all 0.3s ease;
   }
 }
 
@@ -180,7 +193,9 @@ $video-info-box-shadow: -1px 1px 9px 2px #bd45101f !default;
       width: 55%;
       position: relative;
       right: -5px;
-      border-bottom-width: calc($video-strip-height/2);
+      border-bottom-width: calc(
+        var(--ux-video-strip-height, $ux-video-strip-height) / 2
+      );
     }
 
     &__info {
