@@ -1,5 +1,6 @@
 <template>
-  <button class="ux-btn" :disabled="isDisabled" @click="$emit('click')">
+  <a v-if="type == 'a'"> <slot /> </a>
+  <button v-else :disabled="isDisabled" @click="$emit('click')">
     <slot />
   </button>
 </template>
@@ -19,6 +20,11 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'btn',
     },
   },
 };

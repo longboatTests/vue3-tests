@@ -2,14 +2,19 @@ import Button from '~/uibutton/src/Button.vue';
 import '~/tokens/variables.css';
 import '~/tokens/color-light.css';
 
+export const atext = () => ({
+  components: { Button },
+  template: `<Button type='a' href='/today' class='ux-btn ux-btn--primary'>Atext</Button>`,
+});
+
 export const text = () => ({
   components: { Button },
-  template: `<Button>Text</Button>`,
+  template: `<Button class='ux-btn'>Text</Button>`,
 });
 
 export const text_disabled = () => ({
   components: { Button },
-  template: `<Button disabled>Text</Button>`,
+  template: `<Button class='ux-btn' disabled>Text</Button>`,
 });
 
 export const outline = () => ({
